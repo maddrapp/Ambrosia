@@ -515,7 +515,7 @@
       <div class="form-step" data-step="3">
         <div class="form-grid">
           <div class="full">
-            <label>Rate your level of confidence/knowledge on the topic of exercise/fitness.</label>
+            <label class="field-label">Rate your level of confidence/knowledge on the topic of exercise/fitness.</label>
             <div class="range-wrap">
               <span>No Knowledge or Confidence</span>
               <input type="range" name="exercise_knowledge" min="1" max="10" value="5" />
@@ -524,7 +524,7 @@
           </div>
 
           <div class="full">
-            <label>Rate your level of confidence/knowledge on the topic of nutrition.</label>
+            <label class="field-label">Rate your level of confidence/knowledge on the topic of nutrition.</label>
             <div class="range-wrap">
               <span>No Knowledge or Confidence</span>
               <input type="range" name="nutrition_confidence" min="1" max="10" value="5" />
@@ -533,25 +533,27 @@
           </div>
 
           <div class="full">
-            <label>What is your level of understanding when it comes to basic nutrition knowledge?</label>
-            <div class="option-group">
-              <label><input type="radio" name="nutrition_understanding" value="Very high" required /> Very high</label>
-              <label><input type="radio" name="nutrition_understanding" value="High" /> High</label>
-              <label><input type="radio" name="nutrition_understanding" value="Moderate" /> Moderate</label>
-              <label><input type="radio" name="nutrition_understanding" value="Low" /> Low</label>
-              <label><input type="radio" name="nutrition_understanding" value="Very low" /> Very low</label>
-            </div>
+            <label class="field-label">What is your level of understanding when it comes to basic nutrition knowledge?</label>
+            <select name="nutrition_understanding" required>
+              <option value="">Select one</option>
+              <option value="Very high">Very high</option>
+              <option value="High">High</option>
+              <option value="Moderate">Moderate</option>
+              <option value="Low">Low</option>
+              <option value="Very low">Very low</option>
+            </select>
           </div>
 
           <div class="full">
-            <label>Have you previously used corrective exercises?</label>
-            <div class="option-group">
-              <label><input type="radio" name="corrective_exercises" value="Regularly and effective" required /> Yes, I regularly use corrective exercises and find them effective</label>
-              <label><input type="radio" name="corrective_exercises" value="Tried and somewhat helpful" /> Yes, I have tried them before and found them somewhat helpful</label>
-              <label><input type="radio" name="corrective_exercises" value="Tried and not effective" /> Yes, but I didn’t find them particularly effective</label>
-              <label><input type="radio" name="corrective_exercises" value="Never tried" /> No, I’ve never tried corrective exercises</label>
-              <label><input type="radio" name="corrective_exercises" value="Interested in trying" /> No, but I am interested in trying them</label>
-            </div>
+            <label class="field-label">Have you previously used corrective exercises?</label>
+            <select name="corrective_exercises" required>
+              <option value="">Select one</option>
+              <option value="Regularly and effective">Yes, regularly and effective</option>
+              <option value="Tried and somewhat helpful">Yes, tried them and somewhat helpful</option>
+              <option value="Tried and not effective">Yes, tried them and not very effective</option>
+              <option value="Never tried">No, never tried them</option>
+              <option value="Interested in trying">No, but interested in trying</option>
+            </select>
           </div>
         </div>
       </div>
@@ -618,57 +620,56 @@
       <div class="form-step" data-step="5">
         <div class="form-grid">
           <div class="full">
-            <label>Do you have any dietary restrictions? If yes, please list them.</label>
+            <label class="field-label">Do you have any dietary restrictions? If yes, please list them.</label>
             <textarea name="dietary_restrictions" required></textarea>
           </div>
 
-<div class="full">
-  <label class="field-label">Do you prefer preparing meals at home, eating out, or a mix of both?</label>
-  <select name="meal_preference" required>
-    <option value="">Select one</option>
-    <option value="Home almost all the time">Prepare meals at home almost all the time</option>
-    <option value="Mostly home occasionally out">Mostly prepare meals at home, occasionally eat out</option>
-    <option value="Balanced mix">Balanced mix of home and eating out</option>
-    <option value="Mostly out occasionally home">Mostly eat out, occasionally prepare meals at home</option>
-    <option value="Eat out almost all the time">Eat out almost all the time</option>
-  </select>
-</div>
-
-<div class="full">
-  <label class="field-label">Are you comfortable tracking food and/or physical activity?</label>
-  <select name="tracking_comfort" required>
-    <option value="">Select one</option>
-    <option value="Comfortable both">Comfortable tracking both food and physical activity</option>
-    <option value="Food only">Comfortable tracking food only</option>
-    <option value="Physical activity only">Comfortable tracking physical activity only</option>
-    <option value="Neither">Not comfortable tracking either</option>
-    <option value="Open to it">Haven’t tried tracking but open to it</option>
-    <option value="Prefer not to">Prefer not to track</option>
-  </select>
-</div>
+          <div class="full">
+            <label class="field-label">Do you prefer preparing meals at home, eating out, or a mix of both?</label>
+            <select name="meal_preference" required>
+              <option value="">Select one</option>
+              <option value="Home almost all the time">Prepare meals at home almost all the time</option>
+              <option value="Mostly home occasionally out">Mostly prepare meals at home, occasionally eat out</option>
+              <option value="Balanced mix">Balanced mix of home and eating out</option>
+              <option value="Mostly out occasionally home">Mostly eat out, occasionally prepare meals at home</option>
+              <option value="Eat out almost all the time">Eat out almost all the time</option>
+            </select>
           </div>
 
-<div class="full">
-  <label class="field-label">Have you attempted to gain or lose weight in the past?</label>
-  <select name="weight_attempts" required>
-    <option value="">Select one</option>
-    <option value="Yes">Yes</option>
-    <option value="No">No</option>
-  </select>
-</div>
+          <div class="full">
+            <label class="field-label">Are you comfortable tracking food and/or physical activity?</label>
+            <select name="tracking_comfort" required>
+              <option value="">Select one</option>
+              <option value="Comfortable both">Comfortable tracking both food and physical activity</option>
+              <option value="Food only">Comfortable tracking food only</option>
+              <option value="Physical activity only">Comfortable tracking physical activity only</option>
+              <option value="Neither">Not comfortable tracking either</option>
+              <option value="Open to it">Haven’t tried tracking but open to it</option>
+              <option value="Prefer not to">Prefer not to track</option>
+            </select>
+          </div>
 
-<div class="full">
-  <label class="field-label">What is your primary motivation for weight modification?</label>
-  <select name="weight_motivation" required>
-    <option value="">Select one</option>
-    <option value="Overall health">Improve overall health</option>
-    <option value="Appearance">Improve appearance and confidence</option>
-    <option value="Performance">Improve athletic performance</option>
-    <option value="Energy">Increase daily energy</option>
-    <option value="Recovery or prevention">Recover from or prevent injuries</option>
-    <option value="Not interested">Not interested in weight modification</option>
-  </select>
-</div>
+          <div class="full">
+            <label class="field-label">Have you attempted to gain or lose weight in the past?</label>
+            <select name="weight_attempts" required>
+              <option value="">Select one</option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+          </div>
+
+          <div class="full">
+            <label class="field-label">What is your primary motivation for weight modification?</label>
+            <select name="weight_motivation" required>
+              <option value="">Select one</option>
+              <option value="Overall health">Improve overall health</option>
+              <option value="Appearance">Improve appearance and confidence</option>
+              <option value="Performance">Improve athletic performance</option>
+              <option value="Energy">Increase daily energy</option>
+              <option value="Recovery or prevention">Recover from or prevent injuries</option>
+              <option value="Not interested">Not interested in weight modification</option>
+            </select>
+          </div>
         </div>
       </div>
 
@@ -881,7 +882,7 @@
     Need Help?
   </button>
 
-  <div class="helper-panel" id="helperPanel">
+  <div class="helper-panel" id="helperPanel" hidden>
     <div class="helper-header">
       <h3>Ambrosia Guide</h3>
       <p>Choose a topic below to get pointed in the right direction.</p>
@@ -924,6 +925,7 @@ emailjs.init("BJleFc5WPwLgbHOZ_");
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
