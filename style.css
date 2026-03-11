@@ -1118,13 +1118,13 @@ a {
 
 /* Phoenix */
 .plan-card[data-plan="Phoenix"] h3::after {
-  content: "🪶";
+  content: "🐦‍🔥";
   font-size: 0.95rem;
 }
 
 /* Ascendant */
 .plan-card[data-plan="Ascendant"] h3::after {
-  content: "◌";
+  content: "☼";
   font-size: 1.05rem;
 }
 
@@ -1316,11 +1316,11 @@ a {
 }
 
 .plan-indicator[data-index="2"]::before {
-  content: "🪶";
+  content: "🐦‍🔥";
 }
 
 .plan-indicator[data-index="3"]::before {
-  content: "◌";
+  content: "☼";
 }
 
 .plan-indicator.active {
@@ -1441,6 +1441,7 @@ a {
 .plan-slide .plan-card h3 {
   margin: 0 110px 18px 52px !important;
 }
+
 
 
 
