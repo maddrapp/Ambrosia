@@ -1432,10 +1432,59 @@ a {
 .plan-slide .plan-card h3 {
   margin: 0 110px 18px 52px !important;
 }
+/* ===== FINAL PLAN ICONS ===== */
 
+.plan-card[data-plan="Ember"] h3::after,
+.plan-card[data-plan="Flame"] h3::after,
+.plan-card[data-plan="Phoenix"] h3::after,
+.plan-card[data-plan="Ascendant"] h3::after {
+  position: absolute !important;
+  left: -52px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 38px !important;
+  height: 38px !important;
+  display: grid !important;
+  place-items: center !important;
+  color: #f2cc61 !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+}
 
+.plan-card[data-plan="Ember"] h3::after {
+  content: "●" !important;
+}
 
+.plan-card[data-plan="Flame"] h3::after {
+  content: "🔥" !important;
+  font-size: 0.95rem !important;
+}
 
+.plan-card[data-plan="Phoenix"] h3::after {
+  content: "🐦‍🔥" !important;
+  font-size: 0.95rem !important;
+}
 
+.plan-card[data-plan="Ascendant"] h3::after {
+  content: "☼" !important;
+  font-size: 1.05rem !important;
+}
 
+/* indicator icons */
 
+.plan-indicator[data-index="0"]::before {
+  content: "●" !important;
+}
+
+.plan-indicator[data-index="1"]::before {
+  content: "🔥" !important;
+}
+
+.plan-indicator[data-index="2"]::before {
+  content: "🐦‍🔥" !important;
+}
+
+.plan-indicator[data-index="3"]::before {
+  content: "☼" !important;
+}
