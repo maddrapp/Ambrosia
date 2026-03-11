@@ -1095,37 +1095,39 @@ a {
 }
 
 .active-badge {
-  position: absolute;
-  top: -12px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 6;
+  position: absolute !important;
+  top: -24px !important;
+  left: 50% !important;
+  right: auto !important;
+  bottom: auto !important;
+  transform: translateX(-50%) !important;
+  z-index: 999 !important;
 
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  white-space: nowrap;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  white-space: nowrap !important;
 
-  padding: 5px 12px;
-  border-radius: 999px;
-  background: #fffdf9;
-  border: 1px solid rgba(215, 161, 52, 0.9);
+  padding: 5px 12px !important;
+  border-radius: 999px !important;
+  background: #fffdf9 !important;
+  border: 2px solid red !important;
 
-  color: #8c6513;
-  font-size: 8px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  color: #8c6513 !important;
+  font-size: 8px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
 
   box-shadow:
     0 8px 18px rgba(183, 120, 0, 0.12),
-    0 0 0 3px #fffdf9;
+    0 0 0 3px #fffdf9 !important;
 }
 
 .active-badge::before {
-  content: "★";
-  font-size: 9px;
-  line-height: 1;
+  content: "★" !important;
+  font-size: 9px !important;
+  line-height: 1 !important;
 }
 
 .plan-card.is-side {
@@ -1338,6 +1340,7 @@ a {
     left: 22px;
   }
 }
+
 
 
 
