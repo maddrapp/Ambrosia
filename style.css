@@ -1104,9 +1104,7 @@ a {
   font-weight: 700;
   line-height: 1;
 }
-.program-card.ascendant p {
-  color: var(--text-soft);
-}
+
 /* Ember */
 .plan-card[data-plan="Ember"] h3::after {
   content: "●";
@@ -1120,7 +1118,7 @@ a {
 
 /* Phoenix */
 .plan-card[data-plan="Phoenix"] h3::after {
-  content: "🐦‍🔥";
+  content: "𓆰";
   font-size: 0.95rem;
 }
 
@@ -1318,7 +1316,7 @@ a {
 }
 
 .plan-indicator[data-index="2"]::before {
-  content: "🐦‍🔥";
+  content: "𓆰";
 }
 
 .plan-indicator[data-index="3"]::before {
@@ -1464,7 +1462,7 @@ a {
 }
 
 .plan-card[data-plan="Phoenix"] h3::after {
-  content: "🐦‍🔥" !important;
+  content: "𓆰" !important;
   font-size: 0.95rem !important;
 }
 
@@ -1484,7 +1482,7 @@ a {
 }
 
 .plan-indicator[data-index="2"]::before {
-  content: "🐦‍🔥" !important;
+  content: "𓆰" !important;
 }
 
 .plan-indicator[data-index="3"]::before {
@@ -1621,3 +1619,4 @@ a {
     0 0 0 1px rgba(243, 212, 124, 0.12),
     0 0 64px rgba(215, 161, 52, 0.16);
 }
+
