@@ -717,7 +717,7 @@ a {
   display: block;
 }
 
-.multi-step-form label {
+.multi-step-form .field-label {
   display: block;
   margin-bottom: 8px;
   color: #271f1a;
@@ -1880,6 +1880,7 @@ a {
     bottom: 16px;
   }
 }
+
 
 
 
