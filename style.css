@@ -1369,3 +1369,11 @@ a {
     display: none !important;
   }
 }
+
+.plan-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 30px 70px rgba(0,0,0,0.12);
+}
+html {
+  scroll-behavior: smooth;
+}
