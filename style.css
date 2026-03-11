@@ -1163,23 +1163,26 @@ a {
   color: #d7c9bb;
 }
 
+/* Card container */
+.card {
+  position: relative;
+  overflow: visible; /* ensures badge isn't clipped */
+}
+
+/* Deal / Active badge */
 .active-badge {
   position: absolute;
   top: 0;
-  right: 22px;
+  right: 24px;
   transform: translateY(-50%);
   z-index: 8;
 
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-
-  padding: 8px 14px;
+  padding: 8px 16px;
   border-radius: 999px;
 
   background: linear-gradient(
     135deg,
-    #f4d57b,
+    #f3d47c,
     #d7a134,
     #b77800
   );
@@ -1189,18 +1192,14 @@ a {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.18em;
-  line-height: 1;
-
-  white-space: nowrap;
 
   box-shadow:
-    0 10px 20px rgba(185, 122, 0, 0.22),
+    0 12px 24px rgba(185,122,0,0.28),
     0 0 0 4px #f8f5ef;
 }
 
 .active-badge::before {
-  content: "★";
-  font-size: 9px;
+  content: "★ ";
 }
   color: #2b1f0d;
 
@@ -1330,6 +1329,7 @@ a {
     padding: 22px;
   }
 }
+
 
 
 
