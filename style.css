@@ -331,7 +331,9 @@ a {
   object-fit: contain;
   filter: drop-shadow(0 20px 34px rgba(185, 122, 0, 0.12));
 }
-
+.hero-copy {
+  max-width: 640px;
+}
 /* SECTIONS */
 .section {
   padding: 84px 0;
@@ -1633,6 +1635,7 @@ a {
     0 0 0 1px rgba(243, 212, 124, 0.12),
     0 0 64px rgba(215, 161, 52, 0.16);
 }
+
 
 
 
