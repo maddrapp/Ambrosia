@@ -2036,6 +2036,14 @@ a {
   margin-bottom: 12px;
   line-height: 1.45;
 }
+.consent-box p {
+  margin: 0 0 12px;
+  line-height: 1.6;
+}
+
+.consent-box .checkbox-row {
+  margin-top: 16px;
+}
 
 
 
