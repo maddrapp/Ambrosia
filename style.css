@@ -1086,9 +1086,19 @@ a {
 }
 
 .plan-card[data-plan="Ember"] h3::after,
+  content: "⬤";
+}
 .plan-card[data-plan="Flame"] h3::after,
+  content: "🔥";
+}
 .plan-card[data-plan="Phoenix"] h3::after,
+  content: "🪶";
+}
 .plan-card[data-plan="Ascendant"] h3::after {
+   content: "◌";
+  color: #ffd66b;
+  font-size: 1.1rem;
+}   
   position: absolute;
   left: -52px;
   top: 50%;
@@ -1444,3 +1454,4 @@ a {
 .plan-slide .plan-card h3 {
   margin: 0 110px 18px 52px !important;
 }
+
