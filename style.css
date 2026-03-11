@@ -1346,14 +1346,14 @@ a {
 .plan-badge-wrap {
   position: relative;
   overflow: visible;
-  padding-top: 22px;
+  padding-top: 12px;
 }
 
 .plan-badge-wrap .active-badge {
   position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 4px;
+  left: 26px;
+  transform: translateY(-50%);
   z-index: 999;
 
   display: inline-flex;
@@ -1361,15 +1361,15 @@ a {
   gap: 6px;
   white-space: nowrap;
 
-  padding: 5px 12px;
+  padding: 6px 14px;
   border-radius: 999px;
   background: #fffdf9;
-  border: 1px solid rgba(215, 161, 52, 0.9);
+  border: 1px solid rgba(215, 161, 52, 0.85);
 
   color: #8c6513;
-  font-size: 8px;
+  font-size: 9px;
   font-weight: 700;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 
   box-shadow:
@@ -1382,3 +1382,4 @@ a {
   font-size: 9px;
   line-height: 1;
 }
+
