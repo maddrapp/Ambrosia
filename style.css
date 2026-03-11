@@ -1104,7 +1104,9 @@ a {
   font-weight: 700;
   line-height: 1;
 }
-
+.program-card.ascendant p {
+  color: var(--text-soft);
+}
 /* Ember */
 .plan-card[data-plan="Ember"] h3::after {
   content: "●";
@@ -1488,3 +1490,4 @@ a {
 .plan-indicator[data-index="3"]::before {
   content: "☼" !important;
 }
+
