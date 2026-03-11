@@ -1377,9 +1377,22 @@ a {
     margin-right: 96px;
   }
 
-  .plan-price {
-    right: 18px;
-  }
+.plan-price {
+  position: absolute;
+  top: 56px;
+  right: 22px;
+
+  margin: 0;
+  padding: 6px 12px;
+
+  border-radius: 999px;
+  background: #3e3733;
+  color: #fffaf1;
+
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1;
+}
 
   .active-badge {
     right: 18px;
@@ -1390,3 +1403,4 @@ a {
     height: 46px;
   }
 }
+
