@@ -1181,21 +1181,23 @@ a {
   transition: transform 0.25s ease, opacity 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
   overflow: hidden;
 }
+
+.plan-card.featured-plan {
+  padding-top: 52px;
+}
 .plan-badge-wrap {
   position: relative;
   overflow: visible;
 }
 .active-badge {
   position: absolute;
-  top: 0;
+  top: 18px;
   left: 28px;
-  transform: translateY(-50%);
-  z-index: 20;
+  z-index: 5;
 
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  width: fit-content;
   white-space: nowrap;
 
   padding: 5px 12px;
@@ -1335,6 +1337,7 @@ a {
     padding: 22px;
   }
 }
+
 
 
 
