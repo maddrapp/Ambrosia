@@ -721,6 +721,57 @@
                 <label class="field-label">How will you measure your own success in wellness?</label>
                 <textarea name="success_measure" required></textarea>
               </div>
+              <div class="full">
+  <label class="field-label">How will you measure your own success in wellness?</label>
+  <textarea name="success_measure" required></textarea>
+</div>
+
+
+<!-- INFORMED CONSENT -->
+<div class="full">
+  <label class="field-label">Informed Consent for Wellness Coaching</label>
+
+  <div class="consent-box">
+
+    <p>
+      By participating in services provided by Ambrosia Wellness, you acknowledge that wellness coaching is an educational and collaborative process designed to support movement, lifestyle habits, and long-term self-sufficiency.
+    </p>
+
+    <p>
+      Services may include exercise guidance, wellness education, and general lifestyle support. These services are not intended to diagnose, treat, or cure any medical or mental health condition and are not a substitute for care provided by a licensed medical professional.
+    </p>
+
+    <p>
+      Participation in wellness coaching and movement activities involves inherent risks including soreness or injury. You voluntarily accept responsibility for participation.
+    </p>
+
+    <p>
+      Results cannot be guaranteed. Progress depends on consistency, recovery, stress, and personal effort.
+    </p>
+
+<label class="checkbox-row">
+  <input type="checkbox" name="consent_acknowledged" value="Yes" required>
+  <span>I have read and agree to the informed consent statement.</span>
+</label>
+
+  </div>
+</div>
+
+
+<div class="full">
+  <label class="field-label">Full Name (Consent)</label>
+  <input type="text" name="consent_name" required>
+</div>
+
+<div class="full">
+  <label class="field-label">Date</label>
+  <input type="date" name="consent_date" required>
+</div>
+
+<div class="full">
+  <label class="field-label">Signature</label>
+  <input type="text" name="consent_signature" placeholder="Type full name as signature" required>
+</div>
             </div>
           </div>
 
@@ -730,33 +781,6 @@
             <button type="submit" class="btn btn-gold" id="submitStepBtn">Submit Assessment</button>
           </div>
         </form>
-      </div>
-    </section>
-
-    <section class="section" id="consent">
-      <div class="container narrow consent-section">
-        <div class="section-heading">
-          <p class="section-kicker">Informed Consent for Wellness Coaching</p>
-          <h2>Important information before participation.</h2>
-        </div>
-
-        <div class="consent-copy">
-          <p>By participating in services provided by Ambrosia Wellness, you acknowledge that wellness coaching is an educational and collaborative process designed to support movement, lifestyle habits, and long-term self-sufficiency. Services may include exercise guidance, wellness education, and general lifestyle support. These services are not intended to diagnose, treat, or cure any medical or mental health condition and are not a substitute for care provided by a licensed medical or mental health professional.</p>
-
-          <p>You understand that participation in wellness coaching and movement-based activities involves inherent risks, including physical discomfort, soreness, or injury. You voluntarily choose to participate and agree to take responsibility for your own health and safety.</p>
-
-          <p>You acknowledge that results from wellness coaching cannot be guaranteed. Progress depends on many factors, including consistency, effort, recovery, stress, and individual response.</p>
-
-          <p>You understand that Ambrosia Wellness operates within a wellness and educational scope of practice. If concerns arise that exceed this scope, you may be encouraged to seek care from an appropriate licensed healthcare provider.</p>
-
-          <p>By providing your consent, you acknowledge that you are voluntarily engaging in wellness coaching services and agree to assume responsibility for your participation.</p>
-        </div>
-
-        <div class="signature-grid">
-          <input type="text" placeholder="Name" />
-          <input type="text" placeholder="Date" />
-          <input type="text" placeholder="Signature" />
-        </div>
       </div>
     </section>
 
@@ -929,3 +953,4 @@
   <script src="script.js"></script>
 </body>
 </html>
+
