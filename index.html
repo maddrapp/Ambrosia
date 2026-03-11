@@ -867,8 +867,47 @@
   </footer>
 
   <script src="script.js"></script>
+  <div class="helper-widget" id="helperWidget">
+  <button class="helper-toggle" id="helperToggle" type="button" aria-expanded="false" aria-controls="helperPanel">
+    Need Help?
+  </button>
+
+  <div class="helper-panel" id="helperPanel" hidden>
+    <div class="helper-header">
+      <h3>Ambrosia Guide</h3>
+      <p>Choose a topic below to get pointed in the right direction.</p>
+    </div>
+
+    <div class="helper-prompts">
+      <button class="helper-prompt" type="button" data-answer="plans">
+        Which plan is right for me?
+      </button>
+
+      <button class="helper-prompt" type="button" data-answer="services">
+        What does Ambrosia actually help with?
+      </button>
+
+      <button class="helper-prompt" type="button" data-answer="assessment">
+        What happens in the assessment?
+      </button>
+
+      <button class="helper-prompt" type="button" data-answer="injury">
+        Do you work with injuries or limitations?
+      </button>
+
+      <button class="helper-prompt" type="button" data-answer="start">
+        I’m not sure where to begin
+      </button>
+    </div>
+
+    <div class="helper-response" id="helperResponse">
+      <p>Select a question to get started.</p>
+    </div>
+  </div>
+</div>
 </body>
 </html>
+
 
 
 
