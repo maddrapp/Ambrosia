@@ -89,9 +89,9 @@ a {
 }
 
 .brand-copy {
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   line-height: 1;
 }
 
@@ -101,17 +101,17 @@ a {
   font-weight: 700;
   letter-spacing: 0.12em;
   color: var(--gold);
+  display: block;
 }
 
 .brand-tagline {
-  display: block;
-  width: 100%;
   margin-top: 6px;
   font-size: 0.62rem;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.36em;
   text-transform: uppercase;
-  text-align: center;
   color: #a67a22;
+  text-align: center;
+  width: 100%;
 }
 .brand:hover .brand-title {
   color: var(--gold-dark);
@@ -1755,6 +1755,7 @@ a {
     0 0 0 1px rgba(243, 212, 124, 0.12),
     0 0 64px rgba(215, 161, 52, 0.16);
 }
+
 
 
 
