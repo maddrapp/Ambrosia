@@ -279,12 +279,14 @@ if (plansCarousel && plansPrevBtn && plansNextBtn && indicators.length) {
 
   renderCarousel(false);
 }
-const helperToggle = document.getElementById("helperToggle");
-const helperPanel = document.getElementById("helperPanel");
-const helperResponse = document.getElementById("helperResponse");
-const helperPrompts = document.querySelectorAll(".helper-prompt");
+window.addEventListener("DOMContentLoaded", () => {
+  const helperToggle = document.getElementById("helperToggle");
+  const helperPanel = document.getElementById("helperPanel");
+  const helperResponse = document.getElementById("helperResponse");
+  const helperPrompts = document.querySelectorAll(".helper-prompt");
 
-if (helperToggle && helperPanel && helperResponse) {
+  if (!helperToggle || !helperPanel || !helperResponse) return;
+
   helperToggle.addEventListener("click", () => {
     const isHidden = helperPanel.hasAttribute("hidden");
 
@@ -323,8 +325,10 @@ if (helperToggle && helperPanel && helperResponse) {
   helperPrompts.forEach((button) => {
     button.addEventListener("click", () => {
       const key = button.dataset.answer;
-      helperResponse.innerHTML = helperAnswers[key] || "<p>Select a question to get started.</p>";
+      helperResponse.innerHTML =
+        helperAnswers[key] || "<p>Select a question to get started.</p>";
     });
   });
-}
+});
+
 
