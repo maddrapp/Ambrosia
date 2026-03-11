@@ -912,7 +912,19 @@ a {
     flex-direction: column;
     align-items: flex-start;
   }
+.brand-logo {
+  width: 58px;
+  height: 58px;
+}
 
+.brand-title {
+  font-size: 1.55rem;
+}
+
+.brand-tagline {
+  font-size: 0.56rem;
+  letter-spacing: 0.18em;
+}
   .site-nav {
     gap: 14px;
   }
@@ -1632,6 +1644,7 @@ a {
     0 0 0 1px rgba(243, 212, 124, 0.12),
     0 0 64px rgba(215, 161, 52, 0.16);
 }
+
 
 
 
