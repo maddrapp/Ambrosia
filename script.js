@@ -264,17 +264,9 @@ window.addEventListener("DOMContentLoaded", () => {
   const helperPrompts = document.querySelectorAll(".helper-prompt");
 
   if (helperToggle && helperPanel && helperResponse) {
-    helperToggle.addEventListener("click", () => {
-      const isHidden = helperPanel.hasAttribute("hidden");
-
-      if (isHidden) {
-        helperPanel.removeAttribute("hidden");
-        helperToggle.setAttribute("aria-expanded", "true");
-      } else {
-        helperPanel.setAttribute("hidden", "");
-        helperToggle.setAttribute("aria-expanded", "false");
-      }
-    });
+helperToggle.addEventListener("click", () => {
+  helperPanel.classList.toggle("open");
+});
 
     const helperAnswers = {
       plans: `
@@ -308,3 +300,4 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
