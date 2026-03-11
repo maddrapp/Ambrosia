@@ -46,6 +46,16 @@ document.querySelectorAll(".faq-card").forEach(card => {
     card.classList.toggle("active");
   });
 });
+function triggerBurnAnimation(card) {
+  if (!card) return;
+
+  card.classList.remove("burn-animate");
+
+  // force reflow so the animation can replay
+  void card.offsetWidth;
+
+  card.classList.add("burn-animate");
+}
 
 /* ===== Plans carousel ===== */
 const carousel = document.getElementById("plansCarousel");
@@ -115,3 +125,4 @@ if (carousel && prevBtn && nextBtn && indicators.length) {
 
   renderCarousel();
 }
+
