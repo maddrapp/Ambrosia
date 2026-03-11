@@ -319,11 +319,11 @@ a {
 .hero-logo {
   position: relative;
   z-index: 2;
-  width: 250px;
-  max-width: 62%;
+  width: 82%;
+  max-width: none;
   height: auto;
   object-fit: contain;
-  filter: drop-shadow(0 16px 28px rgba(185, 122, 0, 0.10));
+  filter: drop-shadow(0 20px 34px rgba(185, 122, 0, 0.12));
 }
 
 /* SECTIONS */
@@ -1619,4 +1619,5 @@ a {
     0 0 0 1px rgba(243, 212, 124, 0.12),
     0 0 64px rgba(215, 161, 52, 0.16);
 }
+
 
