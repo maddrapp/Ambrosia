@@ -292,32 +292,38 @@ a {
 
 .hero-mark-shell {
   position: relative;
-  width: min(100%, 450px);
+  width: min(100%, 430px);
   aspect-ratio: 1 / 1;
   display: grid;
   place-items: center;
-  border-radius: 40px;
-  background: radial-gradient(circle, rgba(255, 248, 230, 0.95) 0%, rgba(255, 255, 255, 1) 62%);
-  border: 2px solid rgba(215, 161, 52, 0.38);
-  box-shadow: var(--shadow-strong);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 45%, rgba(255, 248, 230, 0.98) 0%, rgba(255,255,255,1) 58%),
+    linear-gradient(135deg, #fffaf1, #f6ecdb);
+  border: 2px solid rgba(215, 161, 52, 0.32);
+  box-shadow:
+    0 30px 80px rgba(28, 25, 23, 0.14),
+    0 0 0 14px rgba(255,255,255,0.35);
   overflow: hidden;
 }
 
 .hero-mark-shell::before {
   content: "";
   position: absolute;
-  inset: 20px;
-  border-radius: 30px;
-  border: 1px solid rgba(215, 161, 52, 0.22);
+  inset: 26px;
+  border-radius: 50%;
+  border: 1px solid rgba(215, 161, 52, 0.20);
 }
+
 
 .hero-logo {
   position: relative;
   z-index: 2;
-  width: 220px;
-  max-width: 60%;
+  width: 250px;
+  max-width: 62%;
   height: auto;
   object-fit: contain;
+  filter: drop-shadow(0 16px 28px rgba(185, 122, 0, 0.10));
 }
 
 /* SECTIONS */
@@ -513,7 +519,27 @@ a {
     radial-gradient(circle at top right, rgba(245, 158, 11, 0.18), transparent 24%),
     linear-gradient(180deg, #54483d 0%, #3c332c 55%, #2b241f 100%);
 }
+.plans-showcase {
+  perspective: 1200px;
+}
 
+.plan-side {
+  transform: scale(0.94) translateY(8px);
+  opacity: 0.76;
+}
+
+.plan-side:hover {
+  transform: scale(0.97) translateY(0);
+  opacity: 0.92;
+}
+
+.featured-plan {
+  transform: scale(1.06) translateY(-6px);
+}
+
+.plan-card:hover {
+  box-shadow: 0 26px 60px rgba(28,25,23,0.14);
+}
 .audience-grid {
   display: grid;
   grid-template-columns: 0.95fr 1.05fr;
@@ -781,7 +807,32 @@ a {
   font-weight: 700;
   color: #271f1a;
 }
+#assessment .section-heading {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
 
+.assessment-form {
+  background: rgba(255,255,255,0.72);
+  border: 1px solid rgba(215,161,52,0.16);
+  border-radius: 30px;
+  padding: 28px;
+  box-shadow: var(--shadow);
+}
+
+.assessment-form .form-grid {
+  margin-top: 0;
+}
+
+.assessment-form textarea {
+  min-height: 140px;
+}
+
+.consent-box {
+  margin-top: 24px;
+  background: linear-gradient(180deg, #fffaf1, #f7efdf);
+}
 .checkbox-row {
   margin-top: 14px;
   display: flex;
@@ -1095,3 +1146,4 @@ a {
     max-width: 56%;
   }
 }
+
