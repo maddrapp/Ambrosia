@@ -1310,3 +1310,62 @@ a {
     padding: 22px;
   }
 }
+
+/* ===== HARD FIX: PLANS CAROUSEL LAYOUT ===== */
+
+.plans-section .plans-carousel-wrap {
+  margin-top: 40px;
+  display: grid !important;
+  grid-template-columns: 52px minmax(0, 1fr) 52px !important;
+  gap: 18px;
+  align-items: center;
+}
+
+.plans-section .plans-carousel {
+  display: grid !important;
+  grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr) minmax(0, 0.88fr) !important;
+  gap: 22px;
+  align-items: center;
+  width: 100%;
+}
+
+.plans-section .plan-card {
+  width: 100%;
+  min-width: 0;
+}
+
+.plans-section .plan-card.is-side {
+  transform: scale(0.94);
+  opacity: 0.78;
+}
+
+.plans-section .plan-card.is-active {
+  transform: scale(1.03);
+  opacity: 1;
+}
+
+@media (max-width: 1100px) {
+  .plans-section .plans-carousel {
+    grid-template-columns: 1fr !important;
+  }
+
+  .plans-section .plan-card.is-side,
+  .plans-section .plan-card.is-active {
+    transform: none;
+    opacity: 1;
+  }
+
+  .plans-section .plans-carousel-wrap {
+    grid-template-columns: 48px minmax(0, 1fr) 48px !important;
+  }
+}
+
+@media (max-width: 820px) {
+  .plans-section .plans-carousel-wrap {
+    grid-template-columns: 1fr !important;
+  }
+
+  .plans-section .carousel-arrow {
+    display: none !important;
+  }
+}
