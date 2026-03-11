@@ -46,18 +46,15 @@ document.querySelectorAll(".faq-card").forEach(card => {
     card.classList.toggle("active");
   });
 });
+
 function triggerBurnAnimation(card) {
   if (!card) return;
 
   card.classList.remove("burn-animate");
-
-  // force reflow so the animation can replay
   void card.offsetWidth;
-
   card.classList.add("burn-animate");
 }
 
-/* ===== Plans carousel ===== */
 const carousel = document.getElementById("plansCarousel");
 const prevBtn = document.getElementById("plansPrev");
 const nextBtn = document.getElementById("plansNext");
@@ -73,11 +70,12 @@ if (carousel && prevBtn && nextBtn && indicators.length) {
     return [prev, index, next];
   }
 
-  function renderCarousel() {
+  function renderCarousel(animate = false) {
     const total = originalPlans.length;
     const [left, center, right] = getVisibleIndexes(activeIndex, total);
 
     carousel.innerHTML = "";
+    let activeCard = null;
 
     [left, center, right].forEach((planIndex, position) => {
       const clone = originalPlans[planIndex].cloneNode(true);
@@ -94,39 +92,40 @@ if (carousel && prevBtn && nextBtn && indicators.length) {
         badge.className = "active-badge";
         badge.textContent = "Active Path";
         clone.prepend(badge);
+
+        activeCard = clone;
       } else {
         clone.classList.add("is-side");
       }
 
       carousel.appendChild(clone);
-      if (position === 1) {
-  requestAnimationFrame(() => triggerBurnAnimation(clone));
-}
     });
 
     indicators.forEach((indicator, index) => {
       indicator.classList.toggle("active", index === activeIndex);
     });
+
+    if (animate && activeCard) {
+      requestAnimationFrame(() => triggerBurnAnimation(activeCard));
+    }
   }
 
   prevBtn.addEventListener("click", () => {
     activeIndex = (activeIndex - 1 + originalPlans.length) % originalPlans.length;
-    renderCarousel();
+    renderCarousel(true);
   });
 
   nextBtn.addEventListener("click", () => {
     activeIndex = (activeIndex + 1) % originalPlans.length;
-    renderCarousel();
+    renderCarousel(true);
   });
 
   indicators.forEach(indicator => {
     indicator.addEventListener("click", () => {
       activeIndex = Number(indicator.dataset.index);
-      renderCarousel();
+      renderCarousel(true);
     });
   });
 
-  renderCarousel();
+  renderCarousel(false);
 }
-
-
