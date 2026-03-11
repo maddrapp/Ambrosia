@@ -1033,6 +1033,41 @@ a {
   position: relative;
   width: 100%;
   overflow: visible;
+  padding-top: 14px;
+}
+
+.plan-slide .active-badge {
+  position: absolute;
+  top: 0;
+  left: 26px;
+  transform: translateY(-50%);
+  z-index: 20;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: #fffdf9;
+  border: 1px solid rgba(215, 161, 52, 0.85);
+
+  color: #8c6513;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  box-shadow:
+    0 8px 18px rgba(183, 120, 0, 0.12),
+    0 0 0 3px #fffdf9;
+}
+
+.plan-slide .active-badge::before {
+  content: "★";
+  font-size: 9px;
+  line-height: 1;
 }
 
 .plan-card {
@@ -1324,47 +1359,3 @@ a {
     left: 22px;
   }
 }
-
-/* ===== BADGE HARD FIX ===== */
-
-.active-badge {
-  position: absolute !important;
-  top: 0 !important;
-  left: 26px !important;
-  transform: translateY(-50%) !important;
-  z-index: 999 !important;
-
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 6px !important;
-  white-space: nowrap !important;
-
-  padding: 6px 14px !important;
-  border-radius: 999px !important;
-  background: #fffdf9 !important;
-  border: 1px solid rgba(215, 161, 52, 0.85) !important;
-
-  color: #8c6513 !important;
-  font-size: 9px !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.12em !important;
-  text-transform: uppercase !important;
-
-  box-shadow:
-    0 8px 18px rgba(183, 120, 0, 0.12),
-    0 0 0 3px #fffdf9 !important;
-}
-
-.active-badge::before {
-  content: "★" !important;
-  font-size: 9px !important;
-  line-height: 1 !important;
-}
-
-.plan-badge-wrap {
-  position: relative !important;
-  display: block !important;
-  overflow: visible !important;
-  padding-top: 14px !important;
-}
-
