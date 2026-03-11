@@ -11,7 +11,6 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  /* ASSESSMENT FORM */
   const multiStepAssessmentForm = document.getElementById("assessmentForm");
   const steps = Array.from(document.querySelectorAll(".form-step"));
 
@@ -57,27 +56,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
       for (const field of currentFields) {
         if (field.type === "radio") continue;
-
         if (!field.checkValidity()) {
           field.reportValidity();
-          return false;
-        }
-      }
-
-      const requiredRadioNames = new Set();
-      steps[currentStep]
-        .querySelectorAll('input[type="radio"][required]')
-        .forEach((radio) => {
-          requiredRadioNames.add(radio.name);
-        });
-
-      for (const groupName of requiredRadioNames) {
-        const checked = steps[currentStep].querySelector(
-          `input[name="${groupName}"]:checked`
-        );
-
-        if (!checked) {
-          alert("Please select an option before continuing.");
           return false;
         }
       }
@@ -88,14 +68,10 @@ window.addEventListener("DOMContentLoaded", () => {
     if (assessmentNextBtn) {
       assessmentNextBtn.addEventListener("click", () => {
         if (!validateCurrentStep()) return;
-
         if (currentStep < steps.length - 1) {
           currentStep += 1;
           updateStepUI();
-          multiStepAssessmentForm.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-          });
+          multiStepAssessmentForm.scrollIntoView({ behavior: "smooth", block: "start" });
         }
       });
     }
@@ -105,10 +81,7 @@ window.addEventListener("DOMContentLoaded", () => {
         if (currentStep > 0) {
           currentStep -= 1;
           updateStepUI();
-          multiStepAssessmentForm.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-          });
+          multiStepAssessmentForm.scrollIntoView({ behavior: "smooth", block: "start" });
         }
       });
     }
@@ -121,11 +94,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
       e.preventDefault();
 
-      emailjs.sendForm(
-        "service_ar23zti",
-        "template_060s7tx",
-        this
-      ).then(
+      emailjs.sendForm("service_ar23zti", "template_060s7tx", this).then(
         function () {
           alert("Assessment submitted successfully!");
           multiStepAssessmentForm.reset();
@@ -142,7 +111,6 @@ window.addEventListener("DOMContentLoaded", () => {
     updateStepUI();
   }
 
-  /* CONTACT FORM */
   const contactForm = document.querySelector(".contact-form");
 
   if (contactForm) {
@@ -153,7 +121,6 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* FLOATING CTA */
   const floatingCTA = document.querySelector(".floating-cta");
 
   window.addEventListener("scroll", () => {
@@ -168,14 +135,12 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  /* FAQ */
   document.querySelectorAll(".faq-card").forEach((card) => {
     card.addEventListener("click", () => {
       card.classList.toggle("active");
     });
   });
 
-  /* PLANS CAROUSEL */
   function triggerBurnAnimation(card) {
     if (!card) return;
     card.classList.remove("burn-animate");
@@ -209,7 +174,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
       if (isActive) {
         card.classList.add("is-active");
-
         const badge = document.createElement("div");
         badge.className = "active-badge";
         badge.textContent = "Active Path";
@@ -233,10 +197,7 @@ window.addEventListener("DOMContentLoaded", () => {
         const clone = originalPlans[planIndex].cloneNode(true);
         const slide = makeSlide(clone, position === 1);
 
-        if (position === 1) {
-          activeCard = clone;
-        }
-
+        if (position === 1) activeCard = clone;
         plansCarousel.appendChild(slide);
       });
 
@@ -269,12 +230,53 @@ window.addEventListener("DOMContentLoaded", () => {
     renderCarousel(false);
   }
 
-helperPrompts.forEach((button) => {
-  button.addEventListener("click", () => {
-    const key = button.dataset.answer;
-    helperResponse.innerHTML =
-      helperAnswers[key] || "<p>Select a question to get started.</p>";
-  });
-});
+  const helperToggle = document.getElementById("helperToggle");
+  const helperPanel = document.getElementById("helperPanel");
+  const helperResponse = document.getElementById("helperResponse");
+  const helperPrompts = document.querySelectorAll(".helper-prompt");
+
+  if (helperToggle && helperPanel && helperResponse) {
+    helperToggle.addEventListener("click", () => {
+      const isHidden = helperPanel.hasAttribute("hidden");
+
+      if (isHidden) {
+        helperPanel.removeAttribute("hidden");
+        helperToggle.setAttribute("aria-expanded", "true");
+      } else {
+        helperPanel.setAttribute("hidden", "");
+        helperToggle.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    const helperAnswers = {
+      plans: `
+        <p><strong>Choosing a plan:</strong> Ember is best for building a foundation, Flame adds more structure and accountability, Phoenix is for deeper renewal and rebuilding, and Ascendant is the most customized concierge option.</p>
+        <p><a href="#plans">Compare the plans</a></p>
+      `,
+      services: `
+        <p><strong>Ambrosia supports</strong> nutrition, movement, recovery, sleep, education, injury prevention, and sustainable habit building.</p>
+        <p><a href="#services">View services</a></p>
+      `,
+      assessment: `
+        <p><strong>The assessment</strong> helps us understand your goals, routine, limitations, and preferences before building recommendations around you.</p>
+        <p><a href="#assessment">Start the assessment</a></p>
+      `,
+      injury: `
+        <p><strong>Yes</strong> — Ambrosia can support injury prevention, corrective exercise, movement modification, and wellness planning within a wellness scope of practice.</p>
+        <p><a href="#faq">See common questions</a></p>
+      `,
+      start: `
+        <p><strong>The best place to begin</strong> is the assessment. It gives structure to your goals and helps identify which path makes the most sense for you.</p>
+        <p><a href="#assessment">Begin here</a></p>
+      `
+    };
+
+    helperPrompts.forEach((button) => {
+      button.addEventListener("click", () => {
+        const key = button.dataset.answer;
+        helperResponse.innerHTML =
+          helperAnswers[key] || "<p>Select a question to get started.</p>";
+      });
+    });
   }
 });
