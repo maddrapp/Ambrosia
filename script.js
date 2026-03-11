@@ -61,7 +61,10 @@ const nextBtn = document.getElementById("plansNext");
 const indicators = document.querySelectorAll(".plan-indicator");
 
 if (carousel && prevBtn && nextBtn && indicators.length) {
-  const originalPlans = Array.from(carousel.querySelectorAll(".plan-card")).map(card => card.cloneNode(true));
+  const originalPlans = Array.from(
+    carousel.querySelectorAll(".plan-card")
+  ).map(card => card.cloneNode(true));
+
   let activeIndex = 1;
 
   function getVisibleIndexes(index, total) {
@@ -70,50 +73,53 @@ if (carousel && prevBtn && nextBtn && indicators.length) {
     return [prev, index, next];
   }
 
-function renderCarousel(animate = false) {
-  const total = originalPlans.length;
-  const [left, center, right] = getVisibleIndexes(activeIndex, total);
+  function makeSlide(card, isActive) {
+    const slide = document.createElement("div");
+    slide.className = "plan-slide";
 
-  carousel.innerHTML = "";
-  let activeCard = null;
+    card.classList.remove("is-side", "is-active");
 
-  [left, center, right].forEach((planIndex, position) => {
-    const clone = originalPlans[planIndex].cloneNode(true);
-
-    clone.classList.remove("is-side", "is-active");
-
-    const oldBadge = clone.querySelector(".active-badge");
-    if (oldBadge) oldBadge.remove();
-
-    if (position === 1) {
-      clone.classList.add("is-active");
-
-      const wrap = document.createElement("div");
-      wrap.className = "plan-badge-wrap";
+    if (isActive) {
+      card.classList.add("is-active");
 
       const badge = document.createElement("div");
       badge.className = "active-badge";
       badge.textContent = "Active Path";
-
-      wrap.appendChild(badge);
-      wrap.appendChild(clone);
-      carousel.appendChild(wrap);
-
-      activeCard = clone;
+      slide.appendChild(badge);
     } else {
-      clone.classList.add("is-side");
-      carousel.appendChild(clone);
+      card.classList.add("is-side");
     }
-  });
 
-  indicators.forEach((indicator, index) => {
-    indicator.classList.toggle("active", index === activeIndex);
-  });
-
-  if (animate && activeCard) {
-    requestAnimationFrame(() => triggerBurnAnimation(activeCard));
+    slide.appendChild(card);
+    return slide;
   }
-}
+
+  function renderCarousel(animate = false) {
+    const total = originalPlans.length;
+    const [left, center, right] = getVisibleIndexes(activeIndex, total);
+
+    carousel.innerHTML = "";
+    let activeCard = null;
+
+    [left, center, right].forEach((planIndex, position) => {
+      const clone = originalPlans[planIndex].cloneNode(true);
+      const slide = makeSlide(clone, position === 1);
+
+      if (position === 1) {
+        activeCard = clone;
+      }
+
+      carousel.appendChild(slide);
+    });
+
+    indicators.forEach((indicator, index) => {
+      indicator.classList.toggle("active", index === activeIndex);
+    });
+
+    if (animate && activeCard) {
+      requestAnimationFrame(() => triggerBurnAnimation(activeCard));
+    }
+  }
 
   prevBtn.addEventListener("click", () => {
     activeIndex = (activeIndex - 1 + originalPlans.length) % originalPlans.length;
@@ -134,4 +140,5 @@ function renderCarousel(animate = false) {
 
   renderCarousel(false);
 }
+
 
