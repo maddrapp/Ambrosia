@@ -1323,15 +1323,6 @@ a {
   content: "☼";
 }
 
-.plan-indicator.active {
-  border-color: #efc739;
-  background: #fff7dc;
-}
-
-.plan-indicator.active::before {
-  color: #1f1a17;
-}
-
 @media (max-width: 1100px) {
   .plans-carousel {
     grid-template-columns: 1fr;
@@ -1441,6 +1432,7 @@ a {
 .plan-slide .plan-card h3 {
   margin: 0 110px 18px 52px !important;
 }
+
 
 
 
