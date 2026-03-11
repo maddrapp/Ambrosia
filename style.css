@@ -608,7 +608,41 @@ a {
 .contact-form {
   margin-top: 34px;
 }
+.question-block,
+.form-step .full,
+.form-step > .form-grid > div {
+  margin-bottom: 10px;
+}
 
+.form-step .field-label {
+  display: block;
+  margin-bottom: 10px;
+  color: #271f1a;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.range-wrap,
+.multi-step-form select,
+.multi-step-form textarea,
+.multi-step-form input {
+  margin-top: 4px;
+}
+
+.form-step .form-grid {
+  gap: 22px;
+  padding-top: 4px;
+}
+
+.range-wrap {
+  padding: 18px;
+  gap: 12px;
+}
+
+.range-wrap span {
+  font-size: 0.9rem;
+  color: var(--text-soft);
+}
 .assessment-form input,
 .assessment-form select,
 .assessment-form textarea,
@@ -1874,6 +1908,7 @@ a {
     bottom: 16px;
   }
 }
+
 
 
 
