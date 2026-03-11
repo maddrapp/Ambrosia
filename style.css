@@ -1908,6 +1908,22 @@ a {
     bottom: 16px;
   }
 }
+.range-wrap {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.range-wrap span {
+  font-size: 0.85rem;
+  color: var(--text-soft);
+  max-width: 140px;
+}
+
+.range-wrap input[type="range"] {
+  flex: 1;
+}
 
 
 
