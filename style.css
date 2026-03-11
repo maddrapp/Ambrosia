@@ -89,10 +89,10 @@ a {
 }
 
 .brand-copy {
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
-  line-height: 1;
   align-items: flex-start;
+  line-height: 1;
 }
 
 .brand-title {
@@ -104,12 +104,14 @@ a {
 }
 
 .brand-tagline {
+  display: block;
+  width: 100%;
   margin-top: 6px;
   font-size: 0.62rem;
-  letter-spacing: 0.38em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
+  text-align: center;
   color: #a67a22;
-  display: block;
 }
 .brand:hover .brand-title {
   color: var(--gold-dark);
@@ -1753,6 +1755,7 @@ a {
     0 0 0 1px rgba(243, 212, 124, 0.12),
     0 0 64px rgba(215, 161, 52, 0.16);
 }
+
 
 
 
