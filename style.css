@@ -1173,29 +1173,23 @@ a {
 .active-badge {
   position: absolute;
   top: 0;
-  right: 24px;
+  left: 28px;
   transform: translateY(-50%);
-  z-index: 8;
+  z-index: 10;
 
-  padding: 8px 16px;
+  padding: 6px 14px;
   border-radius: 999px;
 
-  background: linear-gradient(
-    135deg,
-    #f3d47c,
-    #d7a134,
-    #b77800
-  );
+  background: #f8f5ef;
+  border: 1.5px solid #d7a134;
 
-  color: #2b1f0d;
-  font-size: 10px;
+  color: #8c6513;
+  font-size: 9px;
   font-weight: 700;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  letter-spacing: 0.18em;
 
-  box-shadow:
-    0 12px 24px rgba(185,122,0,0.28),
-    0 0 0 4px #f8f5ef;
+  box-shadow: 0 8px 18px rgba(183,120,0,0.12);
 }
 
 .active-badge::before {
@@ -1329,6 +1323,7 @@ a {
     padding: 22px;
   }
 }
+
 
 
 
