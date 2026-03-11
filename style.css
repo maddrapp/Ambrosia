@@ -1032,7 +1032,7 @@ a {
   background: rgba(255, 255, 255, 0.92);
   box-shadow: var(--shadow);
   transition: transform 0.25s ease, opacity 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .plan-card h3 {
@@ -1177,12 +1177,13 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  width: fit-content;
+  white-space: nowrap;
 
   padding: 5px 12px;
   border-radius: 999px;
-
   background: #fffdf9;
-  border: 1px solid rgba(215,161,52,0.9);
+  border: 1px solid rgba(215, 161, 52, 0.9);
 
   color: #8c6513;
   font-size: 8px;
@@ -1191,13 +1192,14 @@ a {
   text-transform: uppercase;
 
   box-shadow:
-    0 8px 18px rgba(183,120,0,0.12),
+    0 8px 18px rgba(183, 120, 0, 0.12),
     0 0 0 3px #fffdf9;
 }
 
 .active-badge::before {
   content: "★";
   font-size: 9px;
+  line-height: 1;
 }
 
 .plans-indicators {
@@ -1284,7 +1286,7 @@ a {
 }
 .plan-card {
   min-height: auto;
-  overflow: hidden;
+  overflow: visible;
 }
 
   .plan-card.is-side p:not(.plan-subtitle):not(.plan-price),
@@ -1316,6 +1318,7 @@ a {
     padding: 22px;
   }
 }
+
 
 
 
