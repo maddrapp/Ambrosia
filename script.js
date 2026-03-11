@@ -61,7 +61,7 @@ const nextBtn = document.getElementById("plansNext");
 const indicators = document.querySelectorAll(".plan-indicator");
 
 if (carousel && prevBtn && nextBtn && indicators.length) {
-  const originalPlans = Array.from(carousel.querySelectorAll(".plan-card"));
+  const originalPlans = Array.from(carousel.querySelectorAll(".plan-card")).map(card => card.cloneNode(true));
   let activeIndex = 1;
 
   function getVisibleIndexes(index, total) {
@@ -70,45 +70,50 @@ if (carousel && prevBtn && nextBtn && indicators.length) {
     return [prev, index, next];
   }
 
-  function renderCarousel(animate = false) {
-    const total = originalPlans.length;
-    const [left, center, right] = getVisibleIndexes(activeIndex, total);
+function renderCarousel(animate = false) {
+  const total = originalPlans.length;
+  const [left, center, right] = getVisibleIndexes(activeIndex, total);
 
-    carousel.innerHTML = "";
-    let activeCard = null;
+  carousel.innerHTML = "";
+  let activeCard = null;
 
-    [left, center, right].forEach((planIndex, position) => {
-      const clone = originalPlans[planIndex].cloneNode(true);
+  [left, center, right].forEach((planIndex, position) => {
+    const clone = originalPlans[planIndex].cloneNode(true);
 
-      clone.classList.remove("is-side", "is-active");
+    clone.classList.remove("is-side", "is-active");
 
-      const oldBadge = clone.querySelector(".active-badge");
-      if (oldBadge) oldBadge.remove();
+    const oldBadge = clone.querySelector(".active-badge");
+    if (oldBadge) oldBadge.remove();
 
-      if (position === 1) {
-        clone.classList.add("is-active");
+    if (position === 1) {
+      clone.classList.add("is-active");
 
-        const badge = document.createElement("div");
-        badge.className = "active-badge";
-        badge.textContent = "Active Path";
-        clone.prepend(badge);
+      const wrap = document.createElement("div");
+      wrap.className = "plan-badge-wrap";
 
-        activeCard = clone;
-      } else {
-        clone.classList.add("is-side");
-      }
+      const badge = document.createElement("div");
+      badge.className = "active-badge";
+      badge.textContent = "Active Path";
 
+      wrap.appendChild(badge);
+      wrap.appendChild(clone);
+      carousel.appendChild(wrap);
+
+      activeCard = clone;
+    } else {
+      clone.classList.add("is-side");
       carousel.appendChild(clone);
-    });
-
-    indicators.forEach((indicator, index) => {
-      indicator.classList.toggle("active", index === activeIndex);
-    });
-
-    if (animate && activeCard) {
-      requestAnimationFrame(() => triggerBurnAnimation(activeCard));
     }
+  });
+
+  indicators.forEach((indicator, index) => {
+    indicator.classList.toggle("active", index === activeIndex);
+  });
+
+  if (animate && activeCard) {
+    requestAnimationFrame(() => triggerBurnAnimation(activeCard));
   }
+}
 
   prevBtn.addEventListener("click", () => {
     activeIndex = (activeIndex - 1 + originalPlans.length) % originalPlans.length;
@@ -129,3 +134,4 @@ if (carousel && prevBtn && nextBtn && indicators.length) {
 
   renderCarousel(false);
 }
+
