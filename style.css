@@ -89,9 +89,10 @@ a {
 }
 
 .brand-copy {
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
   line-height: 1;
+  align-items: flex-start;
 }
 
 .brand-title {
@@ -105,9 +106,10 @@ a {
 .brand-tagline {
   margin-top: 6px;
   font-size: 0.62rem;
-  letter-spacing: 0.28em;
+  letter-spacing: 0.36em;
   text-transform: uppercase;
   color: #a67a22;
+  display: block;
 }
 .brand:hover .brand-title {
   color: var(--gold-dark);
@@ -1751,6 +1753,7 @@ a {
     0 0 0 1px rgba(243, 212, 124, 0.12),
     0 0 64px rgba(215, 161, 52, 0.16);
 }
+
 
 
 
