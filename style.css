@@ -89,10 +89,9 @@ a {
 }
 
 .brand-logo {
-  width: 44px;
-  height: 44px;
+  width: 42px;
+  height: 42px;
   object-fit: contain;
-  filter: drop-shadow(0 6px 12px rgba(185, 122, 0, 0.12));
 }
 
 .brand-text {
@@ -305,8 +304,9 @@ a {
 .hero-logo {
   position: relative;
   z-index: 1;
-  width: 76%;
-  max-width: 320px;
+  width: 60%;
+  max-width: 220px;
+  height: auto;
   object-fit: contain;
 }
 
@@ -970,3 +970,4 @@ a {
     bottom: 16px;
   }
 }
+
