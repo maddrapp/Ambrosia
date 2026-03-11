@@ -1169,22 +1169,20 @@ a {
   right: 24px;
   transform: translateY(-38%);
   z-index: 6;
-
   padding: 7px 14px;
   border-radius: 999px;
-
   background: #f8ebc7;
-  color: #8b6416;
-
+  color: #2b1f0d;
   font-size: 10px;
   text-transform: uppercase;
   letter-spacing: 0.18em;
   font-weight: 700;
-
-  box-shadow: 0 10px 22px rgba(185, 122, 0, 0.12);
+  box-shadow:
+    0 10px 20px rgba(185,122,0,0.25),
+    0 0 0 3px #fffdf9;
 }
 
-  .active-badge::before {
+.active-badge::before {
   content: "★ ";
 }
   color: #2b1f0d;
@@ -1280,20 +1278,11 @@ a {
   }
 .plans-carousel-wrap {
   overflow: visible;
+  grid-template-columns: 48px minmax(0, 1fr) 48px;
 }
 .plan-card {
-  position: relative;
-  isolation: isolate;
-  width: 100%;
-  min-width: 0;
-  min-height: 520px;
-  padding: 28px;
-  border-radius: 30px;
-  border: 1px solid rgba(215, 161, 52, 0.16);
-  background: rgba(255, 255, 255, 0.92);
-  box-shadow: var(--shadow);
-  transition: transform 0.25s ease, opacity 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-  overflow: visible;
+  min-height: auto;
+  overflow: hidden;
 }
 
   .plan-card.is-side p:not(.plan-subtitle):not(.plan-price),
@@ -1306,7 +1295,7 @@ a {
   .plan-card.is-side .plan-list li:nth-child(n+4) {
     display: list-item;
   }
-
+}
   .plans-carousel-wrap {
     grid-template-columns: 48px minmax(0, 1fr) 48px;
   }
@@ -1325,6 +1314,7 @@ a {
     padding: 22px;
   }
 }
+
 
 
 
