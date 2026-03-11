@@ -129,7 +129,7 @@ multiStepAssessmentForm.addEventListener("submit", function(e) {
     },
     function(error) {
       alert("Submission failed. Please try again.");
-      console.log(error);
+      console.log("EmailJS error:", error);
     }
   );
 
@@ -315,5 +315,6 @@ helperToggle.addEventListener("click", () => {
     });
   }
 });
+
 
 
