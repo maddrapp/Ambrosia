@@ -984,13 +984,16 @@ a {
 
 /* ===== CLEAN PLANS CAROUSEL ===== */
 
+.plans-section {
+  overflow: visible;
+}
+
 .plans-carousel-wrap {
   margin-top: 40px;
   display: grid;
   grid-template-columns: 52px minmax(0, 1fr) 52px;
   gap: 18px;
   align-items: center;
-  overflow: visible;
 }
 
 .carousel-arrow {
@@ -1019,29 +1022,17 @@ a {
   align-items: stretch;
   width: 100%;
   overflow: visible;
-  padding-top: 20px;
-}
-
-.plan-badge-wrap {
-  position: relative;
-  overflow: visible;
   padding-top: 18px;
 }
 
-/* move the whole Phoenix unit, badge included */
-.plan-badge-wrap:has(.plan-card.is-side) {
-  transform: translateY(12px);
+.plans-carousel > * {
+  min-width: 0;
 }
 
-.plan-badge-wrap:has(.plan-card.is-active) {
-  transform: translateY(-8px);
-  z-index: 2;
-}
-
-/* stop the inner Phoenix card from moving by itself */
-.plan-badge-wrap .plan-card.is-side,
-.plan-badge-wrap .plan-card.is-active {
-  transform: none;
+.plan-slide {
+  position: relative;
+  width: 100%;
+  overflow: visible;
 }
 
 .plan-card {
@@ -1095,9 +1086,44 @@ a {
   margin-bottom: 8px;
 }
 
+.active-badge {
+  position: absolute;
+  top: 0;
+  left: 28px;
+  transform: translateY(-50%);
+  z-index: 20;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: #fffdf9;
+  border: 1px solid rgba(215, 161, 52, 0.85);
+
+  color: #8c6513;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  box-shadow:
+    0 8px 18px rgba(183, 120, 0, 0.12),
+    0 0 0 3px #fffdf9;
+}
+
+.active-badge::before {
+  content: "★";
+  font-size: 9px;
+  line-height: 1;
+}
+
 .plan-card.is-side {
   opacity: 0.78;
   filter: saturate(0.92);
+  transform: translateY(12px);
 }
 
 .plan-card.is-side p:not(.plan-subtitle):not(.plan-price),
@@ -1114,6 +1140,7 @@ a {
 
 .plan-card.is-active {
   opacity: 1;
+  transform: translateY(-8px);
   border-color: rgba(215, 161, 52, 0.34);
   background: linear-gradient(180deg, #fffaf1 0%, #ffffff 100%);
   box-shadow: 0 22px 52px rgba(185, 122, 0, 0.14);
@@ -1143,12 +1170,10 @@ a {
     opacity: 0.45;
     transform: scale(0.98);
   }
-
   50% {
     opacity: 0.75;
     transform: scale(1.02);
   }
-
   100% {
     opacity: 0.45;
     transform: scale(0.98);
@@ -1187,32 +1212,6 @@ a {
   color: #d7c9bb;
 }
 
-.plans-indicators {
-  margin-top: 24px;
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-}
-.plans-section {
-  overflow: visible;
-}
-.plan-indicator {
-  width: 18px;
-  height: 18px;
-  border-radius: 999px;
-  border: 1px solid rgba(215, 161, 52, 0.24);
-  background: rgba(255, 255, 255, 0.9);
-  box-shadow: var(--shadow);
-  cursor: pointer;
-}
-
-.plan-indicator.active {
-  background: linear-gradient(135deg, var(--gold-soft), var(--gold), var(--gold-dark));
-  border-color: rgba(183, 120, 0, 0.45);
-}
-
-/* ===== Card-contained ember sweep ===== */
-
 .plan-card::after {
   content: "";
   position: absolute;
@@ -1248,19 +1247,39 @@ a {
     transform: translateX(-135%) skewX(-18deg);
     opacity: 0;
   }
-
   15% {
     opacity: 1;
   }
-
   85% {
     opacity: 1;
   }
-
   100% {
     transform: translateX(135%) skewX(-18deg);
     opacity: 0;
   }
+}
+
+.plans-indicators {
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.plan-indicator {
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(215, 161, 52, 0.24);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: var(--shadow);
+  cursor: pointer;
+}
+
+.plan-indicator.active {
+  background: linear-gradient(135deg, var(--gold-soft), var(--gold), var(--gold-dark));
+  border-color: rgba(183, 120, 0, 0.45);
 }
 
 @media (max-width: 1100px) {
@@ -1270,12 +1289,10 @@ a {
 
   .plans-carousel-wrap {
     grid-template-columns: 48px minmax(0, 1fr) 48px;
-    overflow: visible;
   }
 
   .plan-card {
     min-height: auto;
-    overflow: hidden;
   }
 
   .plan-card.is-side p:not(.plan-subtitle):not(.plan-price),
@@ -1302,6 +1319,11 @@ a {
   .plan-card {
     padding: 22px;
   }
+
+  .active-badge {
+    left: 22px;
+  }
+}
 
 /* ===== BADGE HARD FIX ===== */
 
@@ -1345,3 +1367,4 @@ a {
   overflow: visible !important;
   padding-top: 14px !important;
 }
+
