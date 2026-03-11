@@ -63,39 +63,38 @@ if (carousel && prevBtn && nextBtn && indicators.length) {
     return [prev, index, next];
   }
 
-function renderCarousel() {
-  const total = originalPlans.length;
-  const [left, center, right] = getVisibleIndexes(activeIndex, total);
+  function renderCarousel() {
+    const total = originalPlans.length;
+    const [left, center, right] = getVisibleIndexes(activeIndex, total);
 
-  carousel.innerHTML = "";
+    carousel.innerHTML = "";
 
-  [left, center, right].forEach((planIndex, position) => {
-    const clone = originalPlans[planIndex].cloneNode(true);
+    [left, center, right].forEach((planIndex, position) => {
+      const clone = originalPlans[planIndex].cloneNode(true);
 
-    clone.classList.remove("is-side", "is-active");
+      clone.classList.remove("is-side", "is-active");
 
-    // remove old badge if present
-    const existingBadge = clone.querySelector(".active-badge");
-    if (existingBadge) existingBadge.remove();
+      const oldBadge = clone.querySelector(".active-badge");
+      if (oldBadge) oldBadge.remove();
 
-    if (position === 1) {
-      clone.classList.add("is-active");
+      if (position === 1) {
+        clone.classList.add("is-active");
 
-      const badge = document.createElement("div");
-      badge.className = "active-badge";
-      badge.textContent = "Active Path";
-      clone.prepend(badge);
-    } else {
-      clone.classList.add("is-side");
-    }
+        const badge = document.createElement("div");
+        badge.className = "active-badge";
+        badge.textContent = "Active Path";
+        clone.prepend(badge);
+      } else {
+        clone.classList.add("is-side");
+      }
 
-    carousel.appendChild(clone);
-  });
+      carousel.appendChild(clone);
+    });
 
-  indicators.forEach((indicator, index) => {
-    indicator.classList.toggle("active", index === activeIndex);
-  });
-}
+    indicators.forEach((indicator, index) => {
+      indicator.classList.toggle("active", index === activeIndex);
+    });
+  }
 
   prevBtn.addEventListener("click", () => {
     activeIndex = (activeIndex - 1 + originalPlans.length) % originalPlans.length;
@@ -116,4 +115,3 @@ function renderCarousel() {
 
   renderCarousel();
 }
-
