@@ -13,7 +13,7 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
 /* ASSESSMENT FORM */
 const multiStepAssessmentForm = document.getElementById("assessmentForm");
 
-if (multiStepAssessmentForm) {
+if (multiStepAssessmentForm && steps.length) {
   const steps = Array.from(document.querySelectorAll(".form-step"));
   const assessmentPrevBtn = document.getElementById("prevStepBtn");
   const assessmentNextBtn = document.getElementById("nextStepBtn");
@@ -327,3 +327,4 @@ if (helperToggle && helperPanel && helperResponse) {
     });
   });
 }
+
