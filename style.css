@@ -990,6 +990,7 @@ a {
   grid-template-columns: 52px minmax(0, 1fr) 52px;
   gap: 18px;
   align-items: center;
+  overflow: visible;
 }
 
 .carousel-arrow {
@@ -1020,6 +1021,11 @@ a {
   overflow: visible;
 }
 
+.plan-badge-wrap {
+  position: relative;
+  overflow: visible;
+}
+
 .plan-card {
   position: relative;
   isolation: isolate;
@@ -1031,8 +1037,12 @@ a {
   border: 1px solid rgba(215, 161, 52, 0.16);
   background: rgba(255, 255, 255, 0.92);
   box-shadow: var(--shadow);
-  transition: transform 0.25s ease, opacity 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-  overflow: visible;
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+  overflow: hidden;
 }
 
 .plan-card h3 {
@@ -1067,6 +1077,40 @@ a {
   margin-bottom: 8px;
 }
 
+.active-badge {
+  position: absolute;
+  top: 0;
+  left: 28px;
+  transform: translateY(-50%);
+  z-index: 6;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: #fffdf9;
+  border: 1px solid rgba(215, 161, 52, 0.9);
+
+  color: #8c6513;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+
+  box-shadow:
+    0 8px 18px rgba(183, 120, 0, 0.12),
+    0 0 0 3px #fffdf9;
+}
+
+.active-badge::before {
+  content: "★";
+  font-size: 9px;
+  line-height: 1;
+}
+
 .plan-card.is-side {
   transform: translateY(12px);
   opacity: 0.78;
@@ -1093,12 +1137,12 @@ a {
   box-shadow: 0 22px 52px rgba(185, 122, 0, 0.14);
   z-index: 2;
 }
+
 .plan-card.is-active::before {
   content: "";
   position: absolute;
   inset: -2px;
   border-radius: 32px;
-
   background: radial-gradient(
     circle at center,
     rgba(255, 210, 120, 0.35),
@@ -1106,15 +1150,13 @@ a {
     rgba(215, 161, 52, 0.08),
     transparent 70%
   );
-
   opacity: 0.6;
   z-index: 0;
   pointer-events: none;
-
   animation: ambrosiaGlow 3.2s ease-in-out infinite;
 }
-@keyframes ambrosiaGlow {
 
+@keyframes ambrosiaGlow {
   0% {
     opacity: 0.45;
     transform: scale(0.98);
@@ -1129,8 +1171,8 @@ a {
     opacity: 0.45;
     transform: scale(0.98);
   }
-
 }
+
 .plan-card.dark-plan {
   background: linear-gradient(180deg, #2d2622, #1d1815);
   color: #f6eee5;
@@ -1161,64 +1203,6 @@ a {
 .plan-card.dark-plan.is-active p,
 .plan-card.dark-plan.is-active li {
   color: #d7c9bb;
-}
-
-.plan-card {
-  position: relative;
-}
-
-.plan-card {
-  position: relative;
-  isolation: isolate;
-  width: 100%;
-  min-width: 0;
-  min-height: 520px;
-  padding: 28px;
-  border-radius: 30px;
-  border: 1px solid rgba(215, 161, 52, 0.16);
-  background: rgba(255, 255, 255, 0.92);
-  box-shadow: var(--shadow);
-  transition: transform 0.25s ease, opacity 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-  overflow: hidden;
-}
-
-.plan-card.featured-plan {
-  padding-top: 52px;
-}
-.plan-badge-wrap {
-  position: relative;
-  overflow: visible;
-}
-.active-badge {
-  position: absolute;
-  top: 18px;
-  left: 28px;
-  z-index: 5;
-
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  white-space: nowrap;
-
-  padding: 5px 12px;
-  border-radius: 999px;
-  background: #fffdf9;
-  border: 1px solid rgba(215, 161, 52, 0.9);
-
-  color: #8c6513;
-  font-size: 8px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-
-  box-shadow:
-    0 8px 18px rgba(183, 120, 0, 0.12),
-    0 0 0 3px #fffdf9;
-}
-.active-badge::before {
-  content: "★";
-  font-size: 9px;
-  line-height: 1;
 }
 
 .plans-indicators {
@@ -1271,10 +1255,6 @@ a {
   z-index: 2;
 }
 
-.plan-card .active-badge {
-  z-index: 5;
-}
-
 .plan-card.burn-animate::after {
   animation: emberSweepContained 1s ease forwards;
 }
@@ -1284,12 +1264,15 @@ a {
     transform: translateX(-135%) skewX(-18deg);
     opacity: 0;
   }
+
   15% {
     opacity: 1;
   }
+
   85% {
     opacity: 1;
   }
+
   100% {
     transform: translateX(135%) skewX(-18deg);
     opacity: 0;
@@ -1300,13 +1283,16 @@ a {
   .plans-carousel {
     grid-template-columns: 1fr;
   }
-.plans-carousel-wrap {
-  overflow: visible;
-}
-.plan-card {
-  min-height: auto;
-  overflow: visible;
-}
+
+  .plans-carousel-wrap {
+    grid-template-columns: 48px minmax(0, 1fr) 48px;
+    overflow: visible;
+  }
+
+  .plan-card {
+    min-height: auto;
+    overflow: hidden;
+  }
 
   .plan-card.is-side p:not(.plan-subtitle):not(.plan-price),
   .plan-card.is-side ul {
@@ -1317,10 +1303,6 @@ a {
 
   .plan-card.is-side .plan-list li:nth-child(n+4) {
     display: list-item;
-  }
-}
-  .plans-carousel-wrap {
-    grid-template-columns: 48px minmax(0, 1fr) 48px;
   }
 }
 
@@ -1336,23 +1318,9 @@ a {
   .plan-card {
     padding: 22px;
   }
+
+  .active-badge {
+    left: 22px;
+  }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
