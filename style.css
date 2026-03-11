@@ -83,43 +83,36 @@ a {
 }
 
 .brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 14px;
   text-decoration: none;
-}
-
-.brand-logo {
-  width: 74px;
-  height: 74px;
-  object-fit: contain;
-  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
 }
 
 .brand-copy {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   line-height: 1;
 }
 
 .brand-title {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 2.1rem;
+  font-size: 2.2rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.12em;
   color: var(--gold);
 }
 
 .brand-tagline {
   margin-top: 6px;
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.24em;
-  color: #a67a22;
+  font-size: 0.62rem;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
+  color: #a67a22;
 }
-
+.brand:hover .brand-title {
+  color: var(--gold-dark);
+  transition: color 0.25s ease;
+}
 .site-nav {
   display: flex;
   align-items: center;
@@ -912,10 +905,6 @@ a {
     flex-direction: column;
     align-items: flex-start;
   }
-.brand-logo {
-  width: 58px;
-  height: 58px;
-}
 
 .brand-title {
   font-size: 1.55rem;
@@ -1644,6 +1633,7 @@ a {
     0 0 0 1px rgba(243, 212, 124, 0.12),
     0 0 64px rgba(215, 161, 52, 0.16);
 }
+
 
 
 
