@@ -1373,9 +1373,14 @@ a {
     padding: 20px;
   }
 
-  .plan-card h3 {
-    margin-right: 96px;
-  }
+.plan-card h3 {
+  position: relative;
+  margin: 0 110px 18px 52px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.05rem;
+  color: #2c241f;
+  line-height: 1.2;
+}
 
 .plan-price {
   position: absolute;
@@ -1403,4 +1408,5 @@ a {
     height: 46px;
   }
 }
+
 
