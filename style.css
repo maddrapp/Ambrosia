@@ -1085,25 +1085,6 @@ a {
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
 }
 
-/* PLAN ICONS */
-
-.plan-card[data-plan="Ember"] h3::after,
-.plan-card[data-plan="Flame"] h3::after,
-.plan-card[data-plan="Phoenix"] h3::after,
-.plan-card[data-plan="Ascendant"] h3::after {
-  position: absolute;
-  left: -52px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 38px;
-  height: 38px;
-  display: grid;
-  place-items: center;
-  color: #f2cc61;
-  font-size: 1rem;
-  font-weight: 700;
-}
-
 /* ===== PLAN ICONS ===== */
 
 .plan-card[data-plan="Ember"] h3::after,
@@ -1121,6 +1102,7 @@ a {
   color: #f2cc61;
   font-size: 1rem;
   font-weight: 700;
+  line-height: 1;
 }
 
 /* Ember */
@@ -1131,17 +1113,22 @@ a {
 /* Flame */
 .plan-card[data-plan="Flame"] h3::after {
   content: "🔥";
+  font-size: 0.95rem;
 }
 
 /* Phoenix */
 .plan-card[data-plan="Phoenix"] h3::after {
   content: "🪶";
+  font-size: 0.95rem;
 }
 
 /* Ascendant */
 .plan-card[data-plan="Ascendant"] h3::after {
   content: "◌";
+  font-size: 1.05rem;
 }
+
+
 .plan-card > p:not(.plan-subtitle):not(.plan-price) {
   margin: 0 0 14px;
   color: #5f544b;
@@ -1321,19 +1308,19 @@ a {
 }
 
 .plan-indicator[data-index="0"]::before {
-  content: "◎";
+  content: "●";
 }
 
 .plan-indicator[data-index="1"]::before {
-  content: "◐";
+  content: "🔥";
 }
 
 .plan-indicator[data-index="2"]::before {
-  content: "◒";
+  content: "🪶";
 }
 
 .plan-indicator[data-index="3"]::before {
-  content: "★";
+  content: "◌";
 }
 
 .plan-indicator.active {
@@ -1454,6 +1441,7 @@ a {
 .plan-slide .plan-card h3 {
   margin: 0 110px 18px 52px !important;
 }
+
 
 
 
