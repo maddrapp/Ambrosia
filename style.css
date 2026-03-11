@@ -608,40 +608,7 @@ a {
 .contact-form {
   margin-top: 34px;
 }
-.option-group label {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  padding: 0;
-  border: none;
-  border-radius: 0;
-  background: transparent;
-  color: var(--text-soft);
-  font-weight: 500;
-  cursor: pointer;
-  box-shadow: none;
-}
 
-.option-group {
-  display: grid;
-  gap: 10px;
-  padding: 12px 0;
-}
-
-.option-group input[type="radio"] {
-  margin-top: 4px;
-}
-.form-step .full {
-  grid-column: 1 / -1;
-}
-
-.form-step textarea {
-  min-height: 110px;
-}
-
-.form-step .field-label {
-  line-height: 1.35;
-}
 .assessment-form input,
 .assessment-form select,
 .assessment-form textarea,
@@ -691,6 +658,7 @@ a {
   font-weight: 700;
   color: #271f1a;
 }
+
 #assessment .section-heading {
   margin-left: auto;
   margin-right: auto;
@@ -704,6 +672,7 @@ a {
   padding: 28px;
   box-shadow: var(--shadow);
 }
+
 .multi-step-form {
   background: rgba(255,255,255,0.74);
   border: 1px solid rgba(215,161,52,0.16);
@@ -755,43 +724,27 @@ a {
   margin-bottom: 8px;
   color: #271f1a;
   font-weight: 700;
+  line-height: 1.35;
 }
 
 .multi-step-form textarea {
   min-height: 110px;
 }
 
-.option-group {
-  display: grid;
-  gap: 10px;
-}
-
-.option-group.two-col {
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.option-group label {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  padding: 14px 16px;
-  border: 1px solid #dccfbe;
+.multi-step-form select {
+  width: 100%;
+  border: 1px solid #d9ccb9;
   border-radius: 18px;
+  padding: 14px 16px;
   background: #fffdf9;
-  color: var(--text-soft);
-  font-weight: 500;
-  cursor: pointer;
-  transition: border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+  color: #241d18;
+  outline: none;
+  appearance: none;
 }
 
-.option-group label:hover {
-  border-color: rgba(215,161,52,0.55);
-  box-shadow: 0 0 0 4px rgba(215,161,52,0.08);
-}
-
-.option-group input[type="radio"] {
-  margin-top: 3px;
-  flex: 0 0 auto;
+.multi-step-form select:focus {
+  border-color: rgba(215, 161, 52, 0.7);
+  box-shadow: 0 0 0 4px rgba(215, 161, 52, 0.12);
 }
 
 .range-wrap {
@@ -820,11 +773,6 @@ a {
   display: none;
 }
 
-@media (max-width: 820px) {
-  .option-group.two-col {
-    grid-template-columns: 1fr;
-  }
-}
 .assessment-form textarea {
   min-height: 140px;
 }
@@ -833,6 +781,7 @@ a {
   margin-top: 24px;
   background: linear-gradient(180deg, #fffaf1, #f7efdf);
 }
+
 .checkbox-row {
   margin-top: 14px;
   display: flex;
@@ -868,6 +817,18 @@ a {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
+}
+
+@media (max-width: 820px) {
+  .form-grid,
+  .signature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
 }
 
 /* FAQ */
@@ -1913,6 +1874,7 @@ a {
     bottom: 16px;
   }
 }
+
 
 
 
