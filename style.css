@@ -1165,23 +1165,19 @@ a {
 
 .active-badge {
   position: absolute;
-  top: 0;
+  top: -12px;
   right: 24px;
-
-  transform: translateY(-55%);
-
   z-index: 5;
-
-  padding: 8px 14px;
-
+  padding: 6px 12px;
   border-radius: 999px;
-
-  background: linear-gradient(
-    135deg,
-    var(--gold-soft),
-    var(--gold),
-    var(--gold-dark)
-  );
+  background: #f8ebc7;
+  color: #8b6416;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-weight: 700;
+  box-shadow: 0 10px 22px rgba(185, 122, 0, 0.12);
+}
 
   .active-badge::before {
   content: "★ ";
@@ -1278,16 +1274,20 @@ a {
     grid-template-columns: 1fr;
   }
 
-  .plan-card {
-    min-height: auto;
-  }
-
-  .plan-card.is-side,
-  .plan-card.is-active {
-    transform: none;
-    opacity: 1;
-    filter: none;
-  }
+.plan-card {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  min-width: 0;
+  min-height: 520px;
+  padding: 28px;
+  border-radius: 30px;
+  border: 1px solid rgba(215, 161, 52, 0.16);
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: var(--shadow);
+  transition: transform 0.25s ease, opacity 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  overflow: visible;
+}
 
   .plan-card.is-side p:not(.plan-subtitle):not(.plan-price),
   .plan-card.is-side ul {
@@ -1318,6 +1318,7 @@ a {
     padding: 22px;
   }
 }
+
 
 
 
