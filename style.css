@@ -791,7 +791,69 @@ a {
 .career-action {
   margin-top: 28px;
 }
+.plans-carousel {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 24px;
+  margin-top: 40px;
+  flex-wrap: nowrap;
+}
+.plan-card {
+  background: white;
+  border-radius: 20px;
+  padding: 28px;
+  width: 280px;
+  transition: all 0.35s ease;
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+.plan-card.side {
+  transform: scale(.9);
+  opacity: .6;
+}
+.plan-card.active {
+  transform: scale(1.08);
+  opacity: 1;
+  border: 2px solid #d7a134;
+  box-shadow: 0 18px 50px rgba(0,0,0,0.12);
+}
+.carousel-controls {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 30px;
+}
 
+.carousel-btn {
+  background: #d7a134;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.carousel-btn:hover {
+  background: #c48f2b;
+}
+@media (max-width: 768px) {
+
+  .plans-carousel {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .plan-card {
+    width: 90%;
+  }
+
+  .plan-card.side {
+    opacity: 1;
+    transform: none;
+  }
+
+}
 /* Floating button */
 .floating-cta {
   position: fixed;
@@ -977,5 +1039,6 @@ a {
     bottom: 16px;
   }
 }
+
 
 
