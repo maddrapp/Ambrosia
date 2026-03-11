@@ -114,11 +114,26 @@ window.addEventListener("DOMContentLoaded", () => {
       });
     }
 
-    multiStepAssessmentForm.addEventListener("submit", (e) => {
-      if (!validateCurrentStep()) {
-        e.preventDefault();
-        return;
-      }
+multiStepAssessmentForm.addEventListener("submit", function(e) {
+
+  e.preventDefault();
+
+  emailjs.sendForm(
+    "service_ar23zti",
+    "template_060s7tx",
+    this
+  ).then(
+    function() {
+      alert("Assessment submitted successfully!");
+      multiStepAssessmentForm.reset();
+    },
+    function(error) {
+      alert("Submission failed. Please try again.");
+      console.log(error);
+    }
+  );
+
+});
 
       e.preventDefault();
       alert("Thank you. Your assessment request has been received.");
@@ -300,4 +315,5 @@ helperToggle.addEventListener("click", () => {
     });
   }
 });
+
 
