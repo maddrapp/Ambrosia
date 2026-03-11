@@ -1165,17 +1165,22 @@ a {
 
 .active-badge {
   position: absolute;
-  top: -12px;
+  top: 0;
   right: 24px;
-  z-index: 5;
-  padding: 6px 12px;
+  transform: translateY(-38%);
+  z-index: 6;
+
+  padding: 7px 14px;
   border-radius: 999px;
+
   background: #f8ebc7;
   color: #8b6416;
+
   font-size: 10px;
   text-transform: uppercase;
   letter-spacing: 0.18em;
   font-weight: 700;
+
   box-shadow: 0 10px 22px rgba(185, 122, 0, 0.12);
 }
 
@@ -1273,7 +1278,9 @@ a {
   .plans-carousel {
     grid-template-columns: 1fr;
   }
-
+.plans-carousel-wrap {
+  overflow: visible;
+}
 .plan-card {
   position: relative;
   isolation: isolate;
@@ -1318,6 +1325,7 @@ a {
     padding: 22px;
   }
 }
+
 
 
 
