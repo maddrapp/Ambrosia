@@ -535,45 +535,28 @@
       </div>
     </div>
 
-    <div class="full question-block">
-      <label class="field-label">
-        How confident and knowledgeable do you feel when it comes to nutrition?
-      </label>
+<div class="full question-block">
+  <label class="field-label">
+    How confident and knowledgeable do you feel when it comes to nutrition?
+  </label>
+  <div class="range-wrap">
+    <span>No knowledge or confidence</span>
+    <input type="range" name="nutrition_confidence" min="1" max="10" value="5" />
+    <span>Highly confident and proficient</span>
+  </div>
+</div>
 
-      <div class="range-wrap">
-        <span>No knowledge or confidence</span>
-
-        <input
-          type="range"
-          name="nutrition_confidence"
-          min="1"
-          max="10"
-          value="5"
-        />
-
-        <span>Highly confident and proficient</span>
-      </div>
-    </div>
-
-          <div class="full">
-            <label>What is your level of understanding when it comes to basic nutrition knowledge?</label>
-            <div class="option-group">
-              <label><input type="radio" name="nutrition_understanding" value="Very high" required /> Very high</label>
-              <label><input type="radio" name="nutrition_understanding" value="High" /> High</label>
-              <label><input type="radio" name="nutrition_understanding" value="Moderate" /> Moderate</label>
-              <label><input type="radio" name="nutrition_understanding" value="Low" /> Low</label>
-              <label><input type="radio" name="nutrition_understanding" value="Very low" /> Very low</label>
-            </div>
-            <label class="field-label">What is your level of understanding when it comes to basic nutrition knowledge?</label>
-            <select name="nutrition_understanding" required>
-              <option value="">Select one</option>
-              <option value="Very high">Very high</option>
-              <option value="High">High</option>
-              <option value="Moderate">Moderate</option>
-              <option value="Low">Low</option>
-              <option value="Very low">Very low</option>
-            </select>
-          </div>
+<div class="full">
+  <label class="field-label">What is your level of understanding when it comes to basic nutrition knowledge?</label>
+  <select name="nutrition_understanding" required>
+    <option value="">Select one</option>
+    <option value="Very high">Very high</option>
+    <option value="High">High</option>
+    <option value="Moderate">Moderate</option>
+    <option value="Low">Low</option>
+    <option value="Very low">Very low</option>
+  </select>
+</div>
 
           <div class="full">
             <label>Have you previously used corrective exercises?</label>
@@ -1008,4 +991,5 @@ emailjs.init("BJleFc5WPwLgbHOZ_");
   <script src="script.js"></script>
 </body>
 </html>
+
 
