@@ -99,6 +99,9 @@ if (carousel && prevBtn && nextBtn && indicators.length) {
       }
 
       carousel.appendChild(clone);
+      if (position === 1) {
+  requestAnimationFrame(() => triggerBurnAnimation(clone));
+}
     });
 
     indicators.forEach((indicator, index) => {
@@ -125,4 +128,5 @@ if (carousel && prevBtn && nextBtn && indicators.length) {
 
   renderCarousel();
 }
+
 
