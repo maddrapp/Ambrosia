@@ -1491,21 +1491,60 @@ a {
   content: "☼" !important;
 }
 
-.program-card.ascendant {
+.plan-card[data-plan="Ascendant"] {
   position: relative;
-
-  background: linear-gradient(
-    145deg,
-    #fffdf9,
-    #f8f5ef
-  );
-
-  border: 1px solid rgba(215,161,52,0.35);
-
+  background: linear-gradient(145deg, #fffdf9 0%, #f8f5ef 55%, #f3eadb 100%);
+  border: 1px solid rgba(215, 161, 52, 0.34);
   box-shadow:
-    0 20px 60px rgba(0,0,0,0.08),
-    0 0 0 1px rgba(215,161,52,0.12),
-    0 0 40px rgba(215,161,52,0.12);
-
-  transform: translateY(-6px);
+    0 22px 60px rgba(28, 25, 23, 0.08),
+    0 0 0 1px rgba(215, 161, 52, 0.10),
+    0 0 38px rgba(215, 161, 52, 0.10);
 }
+
+.plan-card[data-plan="Ascendant"]::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 4px;
+  border-top-left-radius: 28px;
+  border-top-right-radius: 28px;
+  background: linear-gradient(90deg, #f3d47c, #d7a134, #b77800);
+  z-index: 3;
+}
+
+.plan-card[data-plan="Ascendant"] > p:not(.plan-subtitle):not(.plan-price) {
+  color: #3a312b;
+}
+
+.plan-card[data-plan="Ascendant"] .plan-list,
+.plan-card[data-plan="Ascendant"] .plan-list li {
+  color: #4a3d34;
+}
+
+.plan-card[data-plan="Ascendant"] .plan-subtitle {
+  color: #b77800;
+}
+
+.plan-card[data-plan="Ascendant"] h3 {
+  color: #1f1a17;
+  letter-spacing: 0.02em;
+}
+
+.plan-card[data-plan="Ascendant"].is-active {
+  border: 2px solid rgba(215, 161, 52, 0.72);
+  background: linear-gradient(180deg, #fffdf9 0%, #f8f3e8 100%);
+  box-shadow:
+    0 28px 70px rgba(28, 25, 23, 0.10),
+    0 0 0 1px rgba(215, 161, 52, 0.14),
+    0 0 52px rgba(215, 161, 52, 0.16);
+  transform: translateY(-4px);
+}
+
+.plan-card[data-plan="Ascendant"]:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 32px 76px rgba(28, 25, 23, 0.12),
+    0 0 0 1px rgba(215, 161, 52, 0.16),
+    0 0 56px rgba(215, 161, 52, 0.18);
+}
+
