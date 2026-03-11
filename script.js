@@ -40,7 +40,87 @@ window.addEventListener("scroll", () => {
     floatingCTA.style.transform = "translateY(20px)";
   }
 });
+const assessmentForm = document.getElementById("assessmentForm");
 
+if (assessmentForm) {
+  const steps = Array.from(document.querySelectorAll(".form-step"));
+  const prevBtn = document.getElementById("prevStepBtn");
+  const nextBtn = document.getElementById("nextStepBtn");
+  const submitBtn = document.getElementById("submitStepBtn");
+  const progressFill = document.getElementById("formProgressFill");
+  const stepLabel = document.getElementById("formStepLabel");
+  const stepPercent = document.getElementById("formStepPercent");
+
+  let currentStep = 0;
+
+  function updateStepUI() {
+    steps.forEach((step, index) => {
+      step.classList.toggle("active", index === currentStep);
+    });
+
+    const totalSteps = steps.length;
+    const percent = Math.round(((currentStep + 1) / totalSteps) * 100);
+
+    progressFill.style.width = `${percent}%`;
+    stepLabel.textContent = `Step ${currentStep + 1} of ${totalSteps}`;
+    stepPercent.textContent = `${percent}%`;
+
+    prevBtn.style.display = currentStep === 0 ? "none" : "inline-flex";
+    nextBtn.style.display = currentStep === totalSteps - 1 ? "none" : "inline-flex";
+    submitBtn.style.display = currentStep === totalSteps - 1 ? "inline-flex" : "none";
+  }
+
+  function validateCurrentStep() {
+    const fields = steps[currentStep].querySelectorAll("input, textarea, select");
+    for (const field of fields) {
+      if (!field.checkValidity()) {
+        field.reportValidity();
+        return false;
+      }
+    }
+
+    const radioGroups = new Set();
+    steps[currentStep].querySelectorAll('input[type="radio"][required]').forEach((radio) => {
+      radioGroups.add(radio.name);
+    });
+
+    for (const groupName of radioGroups) {
+      const checked = steps[currentStep].querySelector(`input[name="${groupName}"]:checked`);
+      if (!checked) {
+        const firstRadio = steps[currentStep].querySelector(`input[name="${groupName}"]`);
+        if (firstRadio) firstRadio.reportValidity();
+        return false;
+      }
+    }
+
+    return true;
+  }
+
+  nextBtn.addEventListener("click", () => {
+    if (!validateCurrentStep()) return;
+    if (currentStep < steps.length - 1) {
+      currentStep += 1;
+      updateStepUI();
+      assessmentForm.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  });
+
+  prevBtn.addEventListener("click", () => {
+    if (currentStep > 0) {
+      currentStep -= 1;
+      updateStepUI();
+      assessmentForm.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  });
+
+  assessmentForm.addEventListener("submit", (e) => {
+    if (!validateCurrentStep()) {
+      e.preventDefault();
+    }
+  });
+
+  updateStepUI();
+}
 document.querySelectorAll(".faq-card").forEach(card => {
   card.addEventListener("click", () => {
     card.classList.toggle("active");
@@ -163,6 +243,7 @@ function makeSlide(card, isActive) {
 
   renderCarousel(false);
 }
+
 
 
 
