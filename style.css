@@ -1174,8 +1174,14 @@ a {
   position: absolute;
   top: 0;
   left: 28px;
+  right: auto;
   transform: translateY(-50%);
   z-index: 10;
+
+  display: inline-flex;
+  align-items: center;
+  width: max-content;
+  white-space: nowrap;
 
   padding: 6px 14px;
   border-radius: 999px;
@@ -1189,11 +1195,14 @@ a {
   letter-spacing: 0.16em;
   text-transform: uppercase;
 
-  box-shadow: 0 8px 18px rgba(183,120,0,0.12);
+  box-shadow: 0 8px 18px rgba(183, 120, 0, 0.12);
 }
 
 .active-badge::before {
-  content: "★ ";
+  content: "★";
+  margin-right: 6px;
+  font-size: 10px;
+  line-height: 1;
 }
   color: #2b1f0d;
 
@@ -1323,6 +1332,7 @@ a {
     padding: 22px;
   }
 }
+
 
 
 
