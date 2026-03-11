@@ -1166,24 +1166,41 @@ a {
 .active-badge {
   position: absolute;
   top: 0;
-  right: 24px;
-  transform: translateY(-38%);
-  z-index: 6;
-  padding: 7px 14px;
+  right: 22px;
+  transform: translateY(-50%);
+  z-index: 8;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 8px 14px;
   border-radius: 999px;
-  background: #f8ebc7;
+
+  background: linear-gradient(
+    135deg,
+    #f4d57b,
+    #d7a134,
+    #b77800
+  );
+
   color: #2b1f0d;
   font-size: 10px;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.18em;
-  font-weight: 700;
+  line-height: 1;
+
+  white-space: nowrap;
+
   box-shadow:
-    0 10px 20px rgba(185,122,0,0.25),
-    0 0 0 3px #fffdf9;
+    0 10px 20px rgba(185, 122, 0, 0.22),
+    0 0 0 4px #f8f5ef;
 }
 
 .active-badge::before {
-  content: "★ ";
+  content: "★";
+  font-size: 9px;
 }
   color: #2b1f0d;
 
@@ -1278,7 +1295,6 @@ a {
   }
 .plans-carousel-wrap {
   overflow: visible;
-  grid-template-columns: 48px minmax(0, 1fr) 48px;
 }
 .plan-card {
   min-height: auto;
@@ -1314,6 +1330,7 @@ a {
     padding: 22px;
   }
 }
+
 
 
 
