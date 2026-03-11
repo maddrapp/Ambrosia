@@ -1,232 +1,708 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ambrosia Wellness</title>
-
-<link rel="stylesheet" href="style.css">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ambrosia Wellness</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-
-<header>
-<div class="container nav">
-
-<h1 class="logo">
-<img src="logo.png" alt="Ambrosia Logo" class="logo-img">
-Ambrosia Wellness
-</h1>
-
-<nav>
-<a href="#method">Method</a>
-<a href="#services">Services</a>
-<a href="#plans">Plans</a>
-<a href="#assessment">Assessment</a>
-<a href="#contact">Contact</a>
-</nav>
-
-</div>
-</header>
-
-
-<section class="hero">
-
-<div class="container hero-content">
-
-<h2>Wellness Built To Last</h2>
-
-<p>
-Ambrosia Wellness helps individuals build sustainable health through
-education, movement, recovery, and intelligent training.
-</p>
-
-<a href="#assessment" class="btn">Start Your Assessment</a>
-
-</div>
-
-</section>
-
-
-<section id="method" class="section">
-
-<div class="container">
-
-<h2>The Ambrosia Method</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>Nutrition</h3>
-<p>Education on proper diet and sustainable nutrition habits.</p>
-</div>
-
-<div class="card">
-<h3>Sleep</h3>
-<p>Sleep optimization for recovery, energy, and performance.</p>
-</div>
-
-<div class="card">
-<h3>Recovery</h3>
-<p>Mobility, myofascial treatment, and restorative practices.</p>
-</div>
-
-<div class="card">
-<h3>Movement</h3>
-<p>Evidence-based exercise programming and corrective training.</p>
-</div>
-
-<div class="card">
-<h3>Learning</h3>
-<p>Education-first coaching so clients understand their body.</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<section id="services" class="section dark">
-
-<div class="container">
-
-<h2>Services</h2>
-
-<ul class="services">
-
-<li>Education on diet and exercise programming</li>
-<li>Weight modification (loss or gain)</li>
-<li>Injury prevention and corrective exercise</li>
-<li>Myofascial treatment</li>
-<li>Manual therapy and recovery work</li>
-
-</ul>
-
-</div>
-
-</section>
-
-
-<section id="plans" class="section">
-
-<div class="container">
-
-<h2>Programs</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>Ember</h3>
-<p>Foundational wellness habits and structure.</p>
-</div>
-
-<div class="card">
-<h3>Flame</h3>
-<p>Momentum and accountability across training and nutrition.</p>
-</div>
-
-<div class="card">
-<h3>Phoenix</h3>
-<p>Transformation and long-term resilience.</p>
-</div>
-
-<div class="card">
-<h3>Ascendant</h3>
-<p>Fully customized coaching and wellness architecture.</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<section id="assessment" class="section dark">
-
-<div class="container">
-
-<h2>Start Your Assessment</h2>
-
-<form class="assessment-form">
-
-<input type="text" placeholder="Full Name" required>
-
-<input type="email" placeholder="Email Address" required>
-
-<textarea placeholder="What are your wellness goals?"></textarea>
-
-<textarea placeholder="Any injuries or limitations we should know about?"></textarea>
-
-<button type="submit">Submit</button>
-
-</form>
-
-</div>
-
-</section>
-
-
-<section class="section">
-
-<div class="container consent">
-
-<h2>Informed Consent for Wellness Coaching</h2>
-
-<p>
-By participating in services provided by Ambrosia Wellness, you acknowledge
-that wellness coaching is an educational and collaborative process designed
-to support movement, lifestyle habits, and long-term self-sufficiency.
-</p>
-
-<p>
-These services are not intended to diagnose, treat, or cure any medical or
-mental health condition and are not a substitute for care provided by a
-licensed medical professional.
-</p>
-
-<p>
-Participation involves inherent risks including physical discomfort,
-soreness, or injury. By engaging in services you agree to assume
-responsibility for your participation.
-</p>
-
-</div>
-
-</section>
-
-
-<section id="contact" class="section dark">
-
-<div class="container">
-
-<h2>Contact</h2>
-
-<p>Email: hello@ambrosiawellness.com</p>
-
-<p>Ambrosia Wellness</p>
-
-</div>
-
-</section>
-
-
-<footer>
-
-<div class="container">
-
-<p>© 2026 Ambrosia Wellness</p>
-
-</div>
-
-</footer>
-
-
-<script src="script.js"></script>
-
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="#top" class="brand">
+        <img src="logo.png" alt="Ambrosia Wellness logo" class="brand-logo" />
+        <span class="brand-text">Ambrosia Wellness</span>
+      </a>
+
+      <nav class="site-nav">
+        <a href="#method">Method</a>
+        <a href="#services">Services</a>
+        <a href="#plans">Plans</a>
+        <a href="#assessment">Assessment</a>
+        <a href="#contact">Contact</a>
+        <a href="#careers">Careers</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            Veteran Founded · Built for Service Professionals
+          </div>
+
+          <h1>Wellness Built to Last</h1>
+
+          <p class="hero-subtext">
+            Ambrosia Wellness integrates nutrition, sleep, recovery, movement,
+            and education into one sustainable system designed for long-term
+            health, performance, and independence.
+          </p>
+
+          <div class="service-banner">
+            Active duty military, first responders, and healthcare professionals
+            qualify for <strong>one month free</strong>.
+          </div>
+
+          <div class="hero-actions">
+            <a href="#assessment" class="btn btn-gold">Start Your Assessment</a>
+            <a href="#plans" class="btn btn-dark">Explore Plans</a>
+            <a href="#method" class="btn btn-light">See the Method</a>
+          </div>
+
+          <div class="hero-metrics">
+            <span>Veteran Owned</span>
+            <span>Doctor-Led Philosophy</span>
+            <span>Whole-Person Wellness</span>
+          </div>
+        </div>
+
+        <div class="hero-mark">
+          <div class="hero-mark-shell">
+            <img src="logo.png" alt="Ambrosia crest" class="hero-logo" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-strip">
+      <div class="container trust-grid">
+        <div class="trust-item">Veteran Owned</div>
+        <div class="trust-item">Doctor-Led Philosophy</div>
+        <div class="trust-item">Evidence-Based Wellness</div>
+        <div class="trust-item">First Responder Friendly</div>
+      </div>
+    </section>
+
+    <section class="section" id="journey">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-kicker">How Ambrosia Works</p>
+          <h2>A clear path from assessment to ownership.</h2>
+        </div>
+
+        <div class="journey-grid">
+          <article class="journey-card">
+            <span class="journey-number">01</span>
+            <h3>Assessment</h3>
+            <p>
+              Understand goals, lifestyle, preferences, and physical limitations
+              before the program begins.
+            </p>
+          </article>
+
+          <article class="journey-card">
+            <span class="journey-number">02</span>
+            <h3>Plan Design</h3>
+            <p>
+              Build a personalized system for nutrition, movement, recovery,
+              and education.
+            </p>
+          </article>
+
+          <article class="journey-card">
+            <span class="journey-number">03</span>
+            <h3>Guided Progress</h3>
+            <p>
+              Track outcomes, behaviors, and learning while refining the plan
+              over time.
+            </p>
+          </article>
+
+          <article class="journey-card">
+            <span class="journey-number">04</span>
+            <h3>Ownership</h3>
+            <p>
+              Develop confidence and independence so clients can guide
+              themselves with clarity.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="method">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-kicker">The Method</p>
+          <h2>Five pillars. One elegant system.</h2>
+          <p class="section-intro">
+            Each Ambrosia program is built around the core levers that shape
+            lasting wellbeing.
+          </p>
+        </div>
+
+        <div class="pillar-grid">
+          <article class="pillar-card">
+            <div class="pillar-badge">01</div>
+            <h3>Nutrition</h3>
+            <p>
+              Sustainable guidance for energy, metabolic health, body
+              composition, and daily performance.
+            </p>
+          </article>
+
+          <article class="pillar-card">
+            <div class="pillar-badge">02</div>
+            <h3>Sleep</h3>
+            <p>
+              Better recovery, sharper focus, and more resilience through
+              structured sleep support.
+            </p>
+          </article>
+
+          <article class="pillar-card">
+            <div class="pillar-badge">03</div>
+            <h3>Recovery</h3>
+            <p>
+              Mobility, stress regulation, and restoration systems that make
+              consistency possible.
+            </p>
+          </article>
+
+          <article class="pillar-card">
+            <div class="pillar-badge">04</div>
+            <h3>Movement</h3>
+            <p>
+              Training designed for real life, different baselines, and
+              long-term capability.
+            </p>
+          </article>
+
+          <article class="pillar-card">
+            <div class="pillar-badge">05</div>
+            <h3>Learning</h3>
+            <p>
+              Education-first coaching so clients understand the why behind
+              every step.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section nuggets-section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-kicker">Knowledge Nuggets</p>
+          <h2>What clients learn along the way.</h2>
+        </div>
+
+        <div class="nugget-grid">
+          <article class="nugget-card">
+            <div class="nugget-icon">✦</div>
+            <p>Consistency beats optimization.</p>
+          </article>
+
+          <article class="nugget-card">
+            <div class="nugget-icon">✦</div>
+            <p>Pain during movement does not always mean injury.</p>
+          </article>
+
+          <article class="nugget-card">
+            <div class="nugget-icon">✦</div>
+            <p>Intensity does not have to mean exhaustion.</p>
+          </article>
+
+          <article class="nugget-card">
+            <div class="nugget-icon">✦</div>
+            <p>Training should adapt to life stress.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section audience-section" id="audience">
+      <div class="container audience-grid">
+        <div class="audience-copy">
+          <p class="section-kicker section-kicker-light">Who It Serves</p>
+          <h2>Designed for all walks of life.</h2>
+          <p>
+            Ambrosia is built for clients who want a smarter, more sustainable
+            path to wellness—whether they are rebuilding, optimizing, or simply
+            ready for better structure.
+          </p>
+        </div>
+
+        <div class="audience-cards">
+          <div class="audience-card">Active Duty Military</div>
+          <div class="audience-card">Veterans in Transition</div>
+          <div class="audience-card">First Responders</div>
+          <div class="audience-card">Healthcare Professionals</div>
+          <div class="audience-card">Busy Professionals</div>
+          <div class="audience-card">Parents Rebuilding Routine</div>
+          <div class="audience-card">Athletes and High Performers</div>
+          <div class="audience-card">Anyone Ready for a Sustainable Reset</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="success">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-kicker">What Success Looks Like</p>
+          <h2>Transformation beyond before-and-after.</h2>
+        </div>
+
+        <div class="success-grid">
+          <article class="success-card">
+            <h3>Energy</h3>
+            <p>
+              Wake up with more stability, clarity, and sustainable daily
+              energy.
+            </p>
+          </article>
+
+          <article class="success-card">
+            <h3>Movement</h3>
+            <p>
+              Move with greater confidence, mobility, and less unnecessary
+              discomfort.
+            </p>
+          </article>
+
+          <article class="success-card">
+            <h3>Confidence</h3>
+            <p>
+              Understand your body, your plan, and how to adapt when life
+              changes.
+            </p>
+          </article>
+
+          <article class="success-card">
+            <h3>Resilience</h3>
+            <p>
+              Recover better, manage stress more effectively, and build
+              long-term capability.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section philosophy-section">
+      <div class="container narrow">
+        <div class="section-heading center">
+          <p class="section-kicker">The Ambrosia Philosophy</p>
+          <h2>Wellness designed for longevity.</h2>
+          <p class="section-intro">
+            Ambrosia is built on the belief that health should be structured,
+            sustainable, and deeply understood—not driven by confusion, guilt,
+            or dependency.
+          </p>
+        </div>
+
+        <div class="philosophy-grid">
+          <article class="philosophy-card">
+            <h3>Structure</h3>
+            <p>
+              Clear frameworks for diet, sleep, recovery, and movement so
+              clients know what to do and why.
+            </p>
+          </article>
+
+          <article class="philosophy-card">
+            <h3>Adaptability</h3>
+            <p>
+              Plans that evolve with changing schedules, stress levels, and
+              stages of life.
+            </p>
+          </article>
+
+          <article class="philosophy-card">
+            <h3>Longevity</h3>
+            <p>
+              Focused on health that lasts decades, not short bursts of
+              performance.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-kicker">Services</p>
+          <h2>Comprehensive wellness services.</h2>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card">
+            <h3>Education on Diet & Exercise Programming</h3>
+            <p>
+              In-person or online guidance focused on sustainable nutrition
+              habits and effective exercise programming.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <h3>Weight Modification</h3>
+            <ul>
+              <li>Weight loss via exercise and caloric deficit</li>
+              <li>Weight gain via exercise and caloric surplus</li>
+              <li>In person or online support</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <h3>Injury Prevention</h3>
+            <ul>
+              <li>Corrective exercises</li>
+              <li>Myofascial treatment</li>
+              <li>Movement pattern support</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <h3>Manual Therapy</h3>
+            <ul>
+              <li>In person only</li>
+              <li>Recovery support</li>
+              <li>Corrective exercise integration</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section plans-section" id="plans">
+      <div class="container">
+        <div class="section-heading center">
+          <p class="section-kicker">Plans</p>
+          <h2>A guided path through transformation.</h2>
+          <p class="section-intro">
+            Move through the lifecycle from Ember to Flame to Phoenix.
+          </p>
+        </div>
+
+        <div class="plans-grid">
+          <article class="plan-card">
+            <p class="plan-subtitle">The beginning spark</p>
+            <h3>Ember</h3>
+            <p class="plan-price">$129/mo</p>
+            <p>
+              A foundational plan for restoring energy, building structure, and
+              creating sustainable habits without overwhelm.
+            </p>
+          </article>
+
+          <article class="plan-card featured-plan">
+            <p class="plan-subtitle">Momentum & growth</p>
+            <h3>Flame</h3>
+            <p class="plan-price">$249/mo</p>
+            <p>
+              A higher-support plan for building momentum across nutrition,
+              recovery, movement, and daily accountability.
+            </p>
+          </article>
+
+          <article class="plan-card">
+            <p class="plan-subtitle">Renewal & transformation</p>
+            <h3>Phoenix</h3>
+            <p class="plan-price">$279/mo</p>
+            <p>
+              A deeper transformation path for clients rebuilding health,
+              recovering from burnout, or stepping into a stronger new chapter.
+            </p>
+          </article>
+
+          <article class="plan-card dark-plan">
+            <p class="plan-subtitle">Custom & concierge</p>
+            <h3>Ascendant</h3>
+            <p class="plan-price">Custom</p>
+            <p>
+              A fully customized program designed around your schedule, goals,
+              and lifestyle.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="assessment">
+      <div class="container narrow">
+        <div class="section-heading center">
+          <p class="section-kicker">Client Assessment</p>
+          <h2>Start your assessment</h2>
+          <p class="section-intro">
+            A short intake so we understand your goals, preferences, and
+            limitations before building your plan.
+          </p>
+        </div>
+
+        <form class="assessment-form">
+          <div class="form-grid">
+            <input type="text" placeholder="Full name" required />
+            <input type="email" placeholder="Email address" required />
+
+            <select>
+              <option>Preferred coaching format</option>
+              <option>In person</option>
+              <option>Online</option>
+              <option>Hybrid</option>
+            </select>
+
+            <select>
+              <option>Current activity level</option>
+              <option>Rarely active</option>
+              <option>1–2x per week</option>
+              <option>3–4x per week</option>
+              <option>5+ times per week</option>
+            </select>
+
+            <select>
+              <option>Training environment</option>
+              <option>Private</option>
+              <option>Public gym</option>
+              <option>Outdoor</option>
+            </select>
+
+            <select>
+              <option>Planning style</option>
+              <option>Structured</option>
+              <option>Flexible</option>
+              <option>Combination</option>
+            </select>
+
+            <textarea placeholder="What are your main goals right now?"></textarea>
+            <textarea placeholder="Any injuries, pain, or mobility limitations we should know about?"></textarea>
+          </div>
+
+          <div class="consent-box">
+            <p class="consent-title">Informed Consent</p>
+            <p>
+              By continuing, you acknowledge that Ambrosia Wellness provides
+              educational wellness coaching and movement guidance within a
+              wellness scope of practice. These services are not a substitute
+              for licensed medical or mental health care.
+            </p>
+
+            <label class="checkbox-row">
+              <input type="checkbox" required />
+              <span>I have read and understand the informed consent statement below.</span>
+            </label>
+          </div>
+
+          <div class="form-actions">
+            <button type="button" class="btn btn-light">Save</button>
+            <button type="submit" class="btn btn-gold">Continue</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="section" id="consent">
+      <div class="container narrow consent-section">
+        <div class="section-heading">
+          <p class="section-kicker">Informed Consent for Wellness Coaching</p>
+          <h2>Important information before participation.</h2>
+        </div>
+
+        <div class="consent-copy">
+          <p>
+            By participating in services provided by Ambrosia Wellness, you
+            acknowledge that wellness coaching is an educational and
+            collaborative process designed to support movement, lifestyle
+            habits, and long-term self-sufficiency. Services may include
+            exercise guidance, wellness education, and general lifestyle
+            support. These services are not intended to diagnose, treat, or
+            cure any medical or mental health condition and are not a substitute
+            for care provided by a licensed medical or mental health
+            professional.
+          </p>
+
+          <p>
+            You understand that participation in wellness coaching and
+            movement-based activities involves inherent risks, including
+            physical discomfort, soreness, or injury. You voluntarily choose to
+            participate and agree to take responsibility for your own health and
+            safety.
+          </p>
+
+          <p>
+            You acknowledge that results from wellness coaching cannot be
+            guaranteed. Progress depends on many factors, including consistency,
+            effort, recovery, stress, and individual response.
+          </p>
+
+          <p>
+            You understand that Ambrosia Wellness operates within a wellness and
+            educational scope of practice. If concerns arise that exceed this
+            scope, you may be encouraged to seek care from an appropriate
+            licensed healthcare provider.
+          </p>
+
+          <p>
+            By providing your consent, you acknowledge that you are voluntarily
+            engaging in wellness coaching services and agree to assume
+            responsibility for your participation.
+          </p>
+        </div>
+
+        <div class="signature-grid">
+          <input type="text" placeholder="Name" />
+          <input type="text" placeholder="Date" />
+          <input type="text" placeholder="Signature" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-kicker">Frequently Asked Questions</p>
+          <h2>Common questions about Ambrosia.</h2>
+        </div>
+
+        <div class="faq-grid">
+          <article class="faq-card">
+            <h3>Is Ambrosia personal training?</h3>
+            <p>
+              Ambrosia is broader than personal training. It is a whole-person
+              wellness system that integrates movement, recovery, education, and
+              lifestyle support.
+            </p>
+          </article>
+
+          <article class="faq-card">
+            <h3>Do I need a gym?</h3>
+            <p>
+              No. Plans can be built for private settings, public gyms, outdoor
+              environments, or hybrid routines.
+            </p>
+          </article>
+
+          <article class="faq-card">
+            <h3>Do you work with injuries?</h3>
+            <p>
+              Ambrosia supports injury prevention, corrective exercise, and
+              movement modification within a wellness scope of practice.
+            </p>
+          </article>
+
+          <article class="faq-card">
+            <h3>Is this only for athletes?</h3>
+            <p>
+              No. The system is designed for active duty military, first
+              responders, healthcare professionals, busy adults, and anyone
+              pursuing sustainable wellness.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-copy">
+          <p class="section-kicker section-kicker-light">Contact Us</p>
+          <h2>Start the conversation.</h2>
+          <p>
+            Reach out to learn more about Ambrosia, inquire about plans, or
+            schedule a consultation.
+          </p>
+          <div class="contact-meta">
+            <p><strong>Email:</strong> hello@ambrosiawellness.com</p>
+            <p><strong>Phone:</strong> (555) 555-5555</p>
+          </div>
+        </div>
+
+        <form class="contact-form">
+          <div class="form-grid">
+            <input type="text" placeholder="First name" />
+            <input type="text" placeholder="Last name" />
+            <input type="email" placeholder="Email address" class="full" />
+            <textarea placeholder="How can we help?" class="full"></textarea>
+          </div>
+          <button type="submit" class="btn btn-gold">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="section careers-section" id="careers">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-kicker">Careers</p>
+          <h2>Join the Ambrosia vision.</h2>
+          <p class="section-intro">
+            We are building a wellness brand centered on longevity, resilience,
+            education, and sustainable performance.
+          </p>
+        </div>
+
+        <div class="career-grid">
+          <article class="career-card">
+            <h3>Coaching Roles</h3>
+            <p>
+              Wellness, performance, nutrition, and recovery professionals who
+              believe in sustainable transformation.
+            </p>
+          </article>
+
+          <article class="career-card">
+            <h3>Clinical Expertise</h3>
+            <p>
+              Practitioners and specialists who can help deepen the credibility
+              and impact of the Ambrosia system.
+            </p>
+          </article>
+
+          <article class="career-card">
+            <h3>Brand & Operations</h3>
+            <p>
+              Creative, operational, and strategic talent who want to help
+              build a premium wellness company.
+            </p>
+          </article>
+        </div>
+
+        <div class="career-action">
+          <a href="#contact" class="btn btn-dark">Inquire About Careers</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <button class="floating-cta" onclick="document.getElementById('assessment').scrollIntoView({behavior:'smooth'})">
+    Start Assessment
+  </button>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="footer-brand">
+          <img src="logo.png" alt="Ambrosia logo" class="footer-logo" />
+          <span>Ambrosia Wellness</span>
+        </div>
+        <p class="footer-copy">
+          Wellness built to last. Education-first coaching for sustainable
+          health, performance, and independence.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <div>
+          <p class="footer-heading">Navigate</p>
+          <a href="#plans">Plans</a>
+          <a href="#assessment">Assessment</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <div>
+          <p class="footer-heading">Brand Values</p>
+          <span>Veteran Owned</span>
+          <span>Evidence Based</span>
+          <span>Education First</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
