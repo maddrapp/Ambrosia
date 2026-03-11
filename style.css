@@ -1104,57 +1104,44 @@ a {
   font-weight: 700;
 }
 
-/* Ember — glowing core */
-.plan-card[data-plan="Ember"] h3::after {
-  content: "\25CF"; /* ● */
-}
+/* ===== PLAN ICONS ===== */
 
-/* Flame — fire */
-.plan-card[data-plan="Flame"] h3::after {
-  content: "X";
-  color: red;
-  font-size: 1.2rem;
-}
-/* Phoenix — feather */
-.plan-card[data-plan="Phoenix"] h3::after {
-  content: "\1FAB6"; /* 🪶 */
-}
-
-/* Ascendant — open circle */
+.plan-card[data-plan="Ember"] h3::after,
+.plan-card[data-plan="Flame"] h3::after,
+.plan-card[data-plan="Phoenix"] h3::after,
 .plan-card[data-plan="Ascendant"] h3::after {
-  content: "\25CC"; /* ◌ */
-}
-
-.plan-card[data-plan="Ember"] h3::after {
-  content: "◎";
-}
-
-.plan-card[data-plan="Flame"] h3::after {
-  content: "◐";
-}
-
-.plan-card[data-plan="Phoenix"] h3::after {
-  content: "◒";
-}
-
-.plan-card[data-plan="Ascendant"] h3::after {
-  content: "★";
-}
-
-.plan-price {
   position: absolute;
-  top: 52px;
-  right: 22px;
-  margin: 0;
-  padding: 6px 12px;
-  border-radius: 999px;
-  background: #3e3733;
-  color: #fffaf1;
-  font-size: 0.84rem;
+  left: -52px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  color: #f2cc61;
+  font-size: 1rem;
   font-weight: 700;
-  line-height: 1;
 }
 
+/* Ember */
+.plan-card[data-plan="Ember"] h3::after {
+  content: "●";
+}
+
+/* Flame */
+.plan-card[data-plan="Flame"] h3::after {
+  content: "🔥";
+}
+
+/* Phoenix */
+.plan-card[data-plan="Phoenix"] h3::after {
+  content: "🪶";
+}
+
+/* Ascendant */
+.plan-card[data-plan="Ascendant"] h3::after {
+  content: "◌";
+}
 .plan-card > p:not(.plan-subtitle):not(.plan-price) {
   margin: 0 0 14px;
   color: #5f544b;
@@ -1467,6 +1454,7 @@ a {
 .plan-slide .plan-card h3 {
   margin: 0 110px 18px 52px !important;
 }
+
 
 
 
