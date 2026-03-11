@@ -56,6 +56,8 @@ window.addEventListener("DOMContentLoaded", () => {
       const currentFields = steps[currentStep].querySelectorAll("input, textarea, select");
 
       for (const field of currentFields) {
+        if (field.type === "radio") continue;
+
         if (!field.checkValidity()) {
           field.reportValidity();
           return false;
@@ -75,10 +77,7 @@ window.addEventListener("DOMContentLoaded", () => {
         );
 
         if (!checked) {
-          const firstRadio = steps[currentStep].querySelector(
-            `input[name="${groupName}"]`
-          );
-          if (firstRadio) firstRadio.reportValidity();
+          alert("Please select an option before continuing.");
           return false;
         }
       }
@@ -114,32 +113,30 @@ window.addEventListener("DOMContentLoaded", () => {
       });
     }
 
-multiStepAssessmentForm.addEventListener("submit", function(e) {
-
-  e.preventDefault();
-
-  emailjs.sendForm(
-    "service_ar23zti",
-    "template_060s7tx",
-    this
-  ).then(
-    function() {
-      alert("Assessment submitted successfully!");
-      multiStepAssessmentForm.reset();
-    },
-    function(error) {
-      alert("Submission failed. Please try again.");
-      console.log("EmailJS error:", error);
-    }
-  );
-
-});
+    multiStepAssessmentForm.addEventListener("submit", function (e) {
+      if (!validateCurrentStep()) {
+        e.preventDefault();
+        return;
+      }
 
       e.preventDefault();
-      alert("Thank you. Your assessment request has been received.");
-      multiStepAssessmentForm.reset();
-      currentStep = 0;
-      updateStepUI();
+
+      emailjs.sendForm(
+        "service_ar23zti",
+        "template_060s7tx",
+        this
+      ).then(
+        function () {
+          alert("Assessment submitted successfully!");
+          multiStepAssessmentForm.reset();
+          currentStep = 0;
+          updateStepUI();
+        },
+        function (error) {
+          alert("Submission failed. Please try again.");
+          console.log("EmailJS error:", error);
+        }
+      );
     });
 
     updateStepUI();
@@ -279,9 +276,17 @@ multiStepAssessmentForm.addEventListener("submit", function(e) {
   const helperPrompts = document.querySelectorAll(".helper-prompt");
 
   if (helperToggle && helperPanel && helperResponse) {
-helperToggle.addEventListener("click", () => {
-  helperPanel.classList.toggle("open");
-});
+    helperToggle.addEventListener("click", () => {
+      const isHidden = helperPanel.hasAttribute("hidden");
+
+      if (isHidden) {
+        helperPanel.removeAttribute("hidden");
+        helperToggle.setAttribute("aria-expanded", "true");
+      } else {
+        helperPanel.setAttribute("hidden", "");
+        helperToggle.setAttribute("aria-expanded", "false");
+      }
+    });
 
     const helperAnswers = {
       plans: `
@@ -315,6 +320,3 @@ helperToggle.addEventListener("click", () => {
     });
   }
 });
-
-
-
