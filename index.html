@@ -1,282 +1,990 @@
-window.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll('a[href^="#"]').forEach((link) => {
-    link.addEventListener("click", function (e) {
-      const targetID = this.getAttribute("href");
-      const target = document.querySelector(targetID);
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ambrosia Wellness</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+<a href="#top" class="brand">
+  <div class="brand-copy">
+    <span class="brand-title">AMBROSIA</span>
+    <span class="brand-tagline">WELLNESS BUILT TO LAST</span>
+  </div>
+</a>
 
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: "smooth" });
-      }
-    });
-  });
+      <nav class="site-nav">
+        <a href="#method">Method</a>
+        <a href="#services">Services</a>
+        <a href="#plans">Plans</a>
+        <a href="#assessment">Assessment</a>
+        <a href="#contact">Contact</a>
+        <a href="#careers">Careers</a>
+      </nav>
+    </div>
+  </header>
 
-  const multiStepAssessmentForm = document.getElementById("assessmentForm");
-  const steps = Array.from(document.querySelectorAll(".form-step"));
+  <main id="top">
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            Veteran Owned · Built for Service Professions
+          </div>
 
-  if (multiStepAssessmentForm && steps.length) {
-    const assessmentPrevBtn = document.getElementById("prevStepBtn");
-    const assessmentNextBtn = document.getElementById("nextStepBtn");
-    const assessmentSubmitBtn = document.getElementById("submitStepBtn");
-    const progressFill = document.getElementById("formProgressFill");
-    const stepLabel = document.getElementById("formStepLabel");
-    const stepPercent = document.getElementById("formStepPercent");
+<h1>
+  Our
+  <span>Mission</span>
+</h1>
 
-    let currentStep = 0;
+<p class="hero-subtext">
+  At Ambrosia Wellness, we believe everyone deserves to feel empowered in their health journey.
+  Wellness should be accessible, sustainable, and rooted in joy, not guilt or confusion.
+  We’re here because too many people are navigating a maze of disinformation, quick fixes,
+  and unsustainable approaches that harm more than they heal.
+</p>
 
-    function updateStepUI() {
-      steps.forEach((step, index) => {
-        step.classList.toggle("active", index === currentStep);
-      });
+<p class="hero-subtext">
+  Our mission is to empower individuals with the knowledge, skills, and confidence to take
+  control of their wellness journey, fostering balanced and fulfilling habits that enhance
+  both personal and communal well-being.
+</p>
 
-      const totalSteps = steps.length;
-      const percent = Math.round(((currentStep + 1) / totalSteps) * 100);
+<p class="hero-subtext">
+  By reframing how people approach diet, exercise, and overall well-being—and equipping them
+  to pass down a legacy of health and wellness to future generations—we aim to challenge the
+  norms of the wellness industry, prioritizing education and independence over dependency.
+</p>
 
-      if (progressFill) progressFill.style.width = `${percent}%`;
-      if (stepLabel) stepLabel.textContent = `Step ${currentStep + 1} of ${totalSteps}`;
-      if (stepPercent) stepPercent.textContent = `${percent}%`;
+          <div class="service-banner">
+            Active duty military, first responders, and healthcare professionals
+            qualify for <strong>one month free</strong>.
+          </div>
 
-      if (assessmentPrevBtn) {
-        assessmentPrevBtn.style.display = currentStep === 0 ? "none" : "inline-flex";
-      }
+          <div class="hero-actions">
+            <a href="#assessment" class="btn btn-gold">Start Your Assessment</a>
+            <a href="#plans" class="btn btn-dark">Explore Plans</a>
+            <a href="#method" class="btn btn-light">See the Method</a>
+          </div>
 
-      if (assessmentNextBtn) {
-        assessmentNextBtn.style.display =
-          currentStep === totalSteps - 1 ? "none" : "inline-flex";
-      }
+          <div class="hero-metrics">
+            <span>Veteran Owned</span>
+            <span>Doctor-Led Philosophy</span>
+            <span>Whole-Person Wellness</span>
+          </div>
+        </div>
 
-      if (assessmentSubmitBtn) {
-        assessmentSubmitBtn.style.display =
-          currentStep === totalSteps - 1 ? "inline-flex" : "none";
-      }
-    }
+        <div class="hero-mark">
+          <div class="hero-mark-shell">
+            <img src="logo.png" alt="Ambrosia crest" class="hero-logo" />
+          </div>
+        </div>
+      </div>
+    </section>
 
-    function validateCurrentStep() {
-      const currentFields = steps[currentStep].querySelectorAll("input, textarea, select");
+    <section class="trust-strip">
+      <div class="container trust-grid">
+        <div class="trust-item">Veteran Owned</div>
+        <div class="trust-item">Doctor-Led Philosophy</div>
+        <div class="trust-item">Evidence-Based Wellness</div>
+        <div class="trust-item">First Responder Friendly</div>
+      </div>
+    </section>
 
-      for (const field of currentFields) {
-        if (field.type === "radio") continue;
-        if (!field.checkValidity()) {
-          field.reportValidity();
-          return false;
-        }
-      }
+    <section class="section" id="journey">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-kicker">How Ambrosia Works</p>
+          <h2>A simple path from assessment to ownership.</h2>
+        </div>
 
-      return true;
-    }
+        <div class="journey-grid">
+          <article class="journey-card">
+            <span class="journey-number">01</span>
+            <h3>Assessment</h3>
+            <p>Understand goals, lifestyle, preferences, and physical limitations before the program begins.</p>
+          </article>
 
-    if (assessmentNextBtn) {
-      assessmentNextBtn.addEventListener("click", () => {
-        if (!validateCurrentStep()) return;
-        if (currentStep < steps.length - 1) {
-          currentStep += 1;
-          updateStepUI();
-          multiStepAssessmentForm.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
-      });
-    }
+          <article class="journey-card">
+            <span class="journey-number">02</span>
+            <h3>Plan Design</h3>
+            <p>Build a personalized program that is tailored to your goals</p>
+          </article>
 
-    if (assessmentPrevBtn) {
-      assessmentPrevBtn.addEventListener("click", () => {
-        if (currentStep > 0) {
-          currentStep -= 1;
-          updateStepUI();
-          multiStepAssessmentForm.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
-      });
-    }
+          <article class="journey-card">
+            <span class="journey-number">03</span>
+            <h3>Guided Progression</h3>
+            <p>Track outcomes, behaviors, and knowledge while refining the plan over time.</p>
+          </article>
 
-    multiStepAssessmentForm.addEventListener("submit", function (e) {
-      if (!validateCurrentStep()) {
-        e.preventDefault();
-        return;
-      }
+          <article class="journey-card">
+            <span class="journey-number">04</span>
+            <h3>Ownership</h3>
+            <p>Develop confidence and independence so clients can guide themselves with clarity.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-      e.preventDefault();
+    <section class="section" id="method">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-kicker">The Method</p>
+          <h2>Five pillars.</h2>
+          <p class="section-intro">
+            Each Ambrosia program is built around the core levers that shape lasting wellbeing.
+          </p>
+        </div>
 
-      emailjs.sendForm("service_ar23zti", "template_060s7tx", this).then(
-        function () {
-          alert("Assessment submitted successfully!");
-          multiStepAssessmentForm.reset();
-          currentStep = 0;
-          updateStepUI();
-        },
-        function (error) {
-          alert("Submission failed. Please try again.");
-          console.log("EmailJS error:", error);
-        }
-      );
-    });
+        <div class="pillar-grid">
+          <article class="pillar-card">
+            <div class="pillar-badge">01</div>
+            <h3>Nutrition</h3>
+            <p>Sustainable guidance for energy, metabolic health, body composition, and daily performance.</p>
+          </article>
 
-    updateStepUI();
-  }
+          <article class="pillar-card">
+            <div class="pillar-badge">02</div>
+            <h3>Sleep</h3>
+            <p>Better recovery, sharper focus, and more resilience through structured sleep support.</p>
+          </article>
 
-  const contactForm = document.querySelector(".contact-form");
+          <article class="pillar-card">
+            <div class="pillar-badge">03</div>
+            <h3>Recovery</h3>
+            <p>Mobility, stress regulation, and restoration systems that make consistency possible.</p>
+          </article>
 
-  if (contactForm) {
-    contactForm.addEventListener("submit", function (e) {
-      e.preventDefault();
-      alert("Your message has been sent. We will reach out shortly.");
-      contactForm.reset();
-    });
-  }
+          <article class="pillar-card">
+            <div class="pillar-badge">04</div>
+            <h3>Movement</h3>
+            <p>Training designed for real life, different baselines, and long-term capability.</p>
+          </article>
 
-  const floatingCTA = document.querySelector(".floating-cta");
+          <article class="pillar-card">
+            <div class="pillar-badge">05</div>
+            <h3>Learning</h3>
+            <p>Education-first coaching so clients understand the why behind every step.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-  window.addEventListener("scroll", () => {
-    if (!floatingCTA) return;
+    <section class="section nuggets-section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-kicker">Knowledge Nuggets</p>
+          <h2>What clients learn along the way.</h2>
+        </div>
 
-    if (window.scrollY > 600) {
-      floatingCTA.style.opacity = "1";
-      floatingCTA.style.transform = "translateY(0)";
-    } else {
-      floatingCTA.style.opacity = "0";
-      floatingCTA.style.transform = "translateY(20px)";
-    }
-  });
+        <div class="nugget-grid">
+          <article class="nugget-card">
+            <div class="nugget-icon">✦</div>
+            <p>We cut through wellness misinformation.</p>
+          </article>
 
-  document.querySelectorAll(".faq-card").forEach((card) => {
-    card.addEventListener("click", () => {
-      card.classList.toggle("active");
-    });
-  });
+          <article class="nugget-card">
+            <div class="nugget-icon">✦</div>
+            <p>We teach you to understand your own body.</p>
+          </article>
 
-  function triggerBurnAnimation(card) {
-    if (!card) return;
-    card.classList.remove("burn-animate");
-    void card.offsetWidth;
-    card.classList.add("burn-animate");
-  }
+          <article class="nugget-card">
+            <div class="nugget-icon">✦</div>
+            <p>Our goal is independence, not dependence.</p>
+          </article>
 
-  const plansCarousel = document.getElementById("plansCarousel");
-  const plansPrevBtn = document.getElementById("plansPrev");
-  const plansNextBtn = document.getElementById("plansNext");
-  const indicators = document.querySelectorAll(".plan-indicator");
+          <article class="nugget-card">
+            <div class="nugget-icon">✦</div>
+            <p>Health is sustainable, not extreme.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-  if (plansCarousel && plansPrevBtn && plansNextBtn && indicators.length) {
-    const originalPlans = Array.from(
-      plansCarousel.querySelectorAll(".plan-card")
-    ).map((card) => card.cloneNode(true));
+    <section class="section audience-section" id="audience">
+      <div class="container audience-grid">
+        <div class="audience-copy">
+          <p class="section-kicker section-kicker-light">Who It Serves</p>
+          <h2>Designed for all walks of life.</h2>
+          <p>
+            Ambrosia is built for clients who want a smarter, more sustainable
+            path to wellness—whether they are rebuilding, optimizing, or simply
+            ready for better structure.
+          </p>
+        </div>
 
-    let activeIndex = 1;
+        <div class="audience-cards">
+          <div class="audience-card">Active Duty Military</div>
+          <div class="audience-card">Veterans in Transition</div>
+          <div class="audience-card">First Responders</div>
+          <div class="audience-card">Healthcare Professionals</div>
+          <div class="audience-card">Anybody in Any Stage of Life</div>
+          <div class="audience-card">Parents Rebuilding Routine</div>
+          <div class="audience-card">Athletes and High Performers</div>
+          <div class="audience-card">Anyone Ready for a Sustainable Reset</div>
+        </div>
+      </div>
+    </section>
 
-    function getVisibleIndexes(index, total) {
-      const prev = (index - 1 + total) % total;
-      const next = (index + 1) % total;
-      return [prev, index, next];
-    }
+    <section class="section" id="success">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-kicker">What Success Looks Like</p>
+          <h2>Transformation beyond before-and-after.</h2>
+        </div>
 
-    function makeSlide(card, isActive) {
-      const slide = document.createElement("div");
-      slide.className = "plan-slide";
+        <div class="success-grid">
+          <article class="success-card">
+            <h3>Energy</h3>
+            <p>Wake up with more stability, clarity, and sustainable daily energy.</p>
+          </article>
 
-      card.classList.remove("is-side", "is-active");
+          <article class="success-card">
+            <h3>Movement</h3>
+            <p>Move with greater confidence, mobility, and less unnecessary discomfort.</p>
+          </article>
 
-      if (isActive) {
-        card.classList.add("is-active");
-        const badge = document.createElement("div");
-        badge.className = "active-badge";
-        badge.textContent = "Active Path";
-        slide.appendChild(badge);
-      } else {
-        card.classList.add("is-side");
-      }
+          <article class="success-card">
+            <h3>Confidence</h3>
+            <p>Understand your body, your plan, and how to adapt when life changes.</p>
+          </article>
 
-      slide.appendChild(card);
-      return slide;
-    }
+          <article class="success-card">
+            <h3>Resilience</h3>
+            <p>Recover better, manage stress more effectively, and build long-term capability.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-    function renderCarousel(animate = false) {
-      const total = originalPlans.length;
-      const [left, center, right] = getVisibleIndexes(activeIndex, total);
+    <section class="section philosophy-section">
+      <div class="container narrow">
+        <div class="section-heading center">
+          <p class="section-kicker">The Ambrosia Philosophy</p>
+          <h2>Wellness designed for longevity.</h2>
+          <p class="section-intro">
+            Ambrosia is built on the belief that health should be structured, sustainable, and deeply understood—not driven by confusion, guilt, or dependency.
+          </p>
+        </div>
 
-      plansCarousel.innerHTML = "";
-      let activeCard = null;
+        <div class="philosophy-grid">
+          <article class="philosophy-card">
+            <h3>Structure</h3>
+            <p>Clear frameworks for diet, sleep, recovery, and movement so clients know what to do and why.</p>
+          </article>
 
-      [left, center, right].forEach((planIndex, position) => {
-        const clone = originalPlans[planIndex].cloneNode(true);
-        const slide = makeSlide(clone, position === 1);
+          <article class="philosophy-card">
+            <h3>Adaptability</h3>
+            <p>Plans that evolve with changing schedules, stress levels, and stages of life.</p>
+          </article>
 
-        if (position === 1) activeCard = clone;
-        plansCarousel.appendChild(slide);
-      });
+          <article class="philosophy-card">
+            <h3>Longevity</h3>
+            <p>Focused on health that lasts decades, not short bursts of performance.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-      indicators.forEach((indicator, index) => {
-        indicator.classList.toggle("active", index === activeIndex);
-      });
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-kicker">Services</p>
+          <h2>Comprehensive wellness services.</h2>
+        </div>
 
-      if (animate && activeCard) {
-        requestAnimationFrame(() => triggerBurnAnimation(activeCard));
-      }
-    }
+        <div class="service-grid">
+          <article class="service-card">
+            <h3>Education on Diet & Exercise Programming</h3>
+            <p>In-person or online guidance focused on sustainable nutrition habits and effective exercise programming.</p>
+          </article>
 
-    plansPrevBtn.addEventListener("click", () => {
-      activeIndex = (activeIndex - 1 + originalPlans.length) % originalPlans.length;
-      renderCarousel(true);
-    });
+          <article class="service-card">
+            <h3>Weight Modification</h3>
+            <ul>
+              <li>Weight loss via exercise and caloric deficit</li>
+              <li>Weight gain via exercise and caloric surplus</li>
+              <li>In person or online support</li>
+            </ul>
+          </article>
 
-    plansNextBtn.addEventListener("click", () => {
-      activeIndex = (activeIndex + 1) % originalPlans.length;
-      renderCarousel(true);
-    });
+          <article class="service-card">
+            <h3>Injury Prevention</h3>
+            <ul>
+              <li>Corrective exercises</li>
+              <li>Myofascial treatment</li>
+              <li>Movement pattern support</li>
+            </ul>
+          </article>
 
-    indicators.forEach((indicator) => {
-      indicator.addEventListener("click", () => {
-        activeIndex = Number(indicator.dataset.index);
-        renderCarousel(true);
-      });
-    });
+          <article class="service-card">
+            <h3>Manual Therapy</h3>
+            <ul>
+              <li>In person only</li>
+              <li>Recovery support</li>
+              <li>Corrective exercise integration</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
 
-    renderCarousel(false);
-  }
+<section class="section plans-section" id="plans">
+  <div class="container">
+    <div class="section-heading center">
+      <p class="section-kicker">Plans</p>
+      <h2>A guided path through transformation.</h2>
+      <p class="section-intro">Move through the lifecycle from Ember to Flame to Phoenix.</p>
+    </div>
 
-  const helperToggle = document.getElementById("helperToggle");
-  const helperPanel = document.getElementById("helperPanel");
-  const helperResponse = document.getElementById("helperResponse");
-  const helperPrompts = document.querySelectorAll(".helper-prompt");
+    <div class="plans-carousel-wrap">
+      <button class="carousel-arrow" id="plansPrev" type="button" aria-label="Previous plan">
+        ←
+      </button>
 
-  if (helperToggle && helperPanel && helperResponse) {
-    helperToggle.addEventListener("click", () => {
-      const isHidden = helperPanel.hasAttribute("hidden");
+<div class="plans-carousel" id="plansCarousel">
+  <article class="plan-card" data-plan="Ember">
+    <p class="plan-subtitle">The beginning spark</p>
+    <h3>Ember</h3>
+    <p class="plan-price">$129/mo</p>
+    <p>
+      A foundational plan for restoring energy, building structure, and
+      creating sustainable habits without overwhelm.
+    </p>
+    <ul class="plan-list">
+      <li>Initial wellness assessment</li>
+      <li>Foundational nutrition guidance</li>
+      <li>Sleep and recovery framework</li>
+    </ul>
+  </article>
 
-      if (isHidden) {
-        helperPanel.removeAttribute("hidden");
-        helperToggle.setAttribute("aria-expanded", "true");
-      } else {
-        helperPanel.setAttribute("hidden", "");
-        helperToggle.setAttribute("aria-expanded", "false");
-      }
-    });
+  <article class="plan-card" data-plan="Flame">
+    <p class="plan-subtitle">Momentum & growth</p>
+    <h3>Flame</h3>
+    <p class="plan-price">$249/mo</p>
+    <p>
+      A higher-support plan for building momentum across nutrition,
+      recovery, movement, and daily accountability.
+    </p>
+    <ul class="plan-list">
+      <li>Personalized wellness roadmap</li>
+      <li>Movement and recovery planning</li>
+      <li>Weekly accountability structure</li>
+      <li>Ongoing education and support</li>
+    </ul>
+  </article>
 
-    const helperAnswers = {
-      plans: `
-        <p><strong>Choosing a plan:</strong> Ember is best for building a foundation, Flame adds more structure and accountability, Phoenix is for deeper renewal and rebuilding, and Ascendant is the most customized concierge option.</p>
-        <p><a href="#plans">Compare the plans</a></p>
-      `,
-      services: `
-        <p><strong>Ambrosia supports</strong> nutrition, movement, recovery, sleep, education, injury prevention, and sustainable habit building.</p>
-        <p><a href="#services">View services</a></p>
-      `,
-      assessment: `
-        <p><strong>The assessment</strong> helps us understand your goals, routine, limitations, and preferences before building recommendations around you.</p>
-        <p><a href="#assessment">Start the assessment</a></p>
-      `,
-      injury: `
-        <p><strong>Yes</strong> — Ambrosia can support injury prevention, corrective exercise, movement modification, and wellness planning within a wellness scope of practice.</p>
-        <p><a href="#faq">See common questions</a></p>
-      `,
-      start: `
-        <p><strong>The best place to begin</strong> is the assessment. It gives structure to your goals and helps identify which path makes the most sense for you.</p>
-        <p><a href="#assessment">Begin here</a></p>
-      `
-    };
+  <article class="plan-card featured-plan" data-plan="Phoenix">
+    <p class="plan-subtitle">Renewal & transformation</p>
+    <h3>Phoenix</h3>
+    <p class="plan-price">$279/mo</p>
+    <p>
+      A deeper transformation path for clients rebuilding health,
+      recovering from burnout, or stepping into a stronger new chapter.
+    </p>
+    <ul class="plan-list">
+      <li>Recovery-first wellness roadmap</li>
+      <li>Nutrition and energy reset</li>
+      <li>Support for rebuilding consistency</li>
+    </ul>
+  </article>
 
-    helperPrompts.forEach((button) => {
-      button.addEventListener("click", () => {
-        const key = button.dataset.answer;
-        helperResponse.innerHTML =
-          helperAnswers[key] || "<p>Select a question to get started.</p>";
-      });
-    });
-  }
-});
+  <article class="plan-card dark-plan" data-plan="Ascendant">
+    <p class="plan-subtitle">Custom & concierge</p>
+    <h3>Ascendant</h3>
+    <p class="plan-price">Custom</p>
+    <p>
+      A fully customized program designed around your schedule, goals,
+      and lifestyle.
+    </p>
+    <ul class="plan-list">
+      <li>Fully personalized wellness architecture</li>
+      <li>Direct consultation and strategic planning</li>
+      <li>Flexible program structure</li>
+      <li>Priority access and ongoing refinement</li>
+    </ul>
+  </article>
+</div>
+
+      <button class="carousel-arrow" id="plansNext" type="button" aria-label="Next plan">
+        →
+      </button>
+    </div>
+
+    <div class="plans-indicators" id="plansIndicators">
+      <button class="plan-indicator" data-index="0" aria-label="Show Ember"></button>
+      <button class="plan-indicator" data-index="1" aria-label="Show Flame"></button>
+      <button class="plan-indicator" data-index="2" aria-label="Show Phoenix"></button>
+      <button class="plan-indicator" data-index="3" aria-label="Show Ascendant"></button>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="assessment">
+  <div class="container narrow">
+    <div class="section-heading center">
+      <p class="section-kicker">Client Assessment</p>
+      <h2>Start your assessment</h2>
+      <p class="section-intro">
+        A guided intake designed to understand your goals, preferences, health considerations, and current routine.
+      </p>
+    </div>
+
+    <form class="assessment-form multi-step-form" id="assessmentForm">
+      <div class="form-progress-wrap">
+        <div class="form-progress-top">
+          <span id="formStepLabel">Step 1 of 6</span>
+          <span id="formStepPercent">17%</span>
+        </div>
+        <div class="form-progress-bar">
+          <div class="form-progress-fill" id="formProgressFill"></div>
+        </div>
+      </div>
+
+      <!-- STEP 1 -->
+      <div class="form-step active" data-step="1">
+        <div class="form-grid">
+          <div class="full">
+            <label>Full Name (First, Last)</label>
+            <input type="text" name="full_name" required />
+          </div>
+
+          <div>
+            <label class="field-label">Email</label>
+            <input type="email" name="email" required />
+          </div>
+
+          <div>
+            <label>Age</label>
+            <input type="number" name="age" min="1" required />
+          </div>
+
+          <div>
+            <label>Weight (lbs)</label>
+            <input type="number" name="weight" min="1" required />
+          </div>
+
+          <div>
+            <label>Height (in)</label>
+            <input type="number" name="height" min="1" required />
+          </div>
+
+          <div class="full">
+            <label>How many hours of sleep a day do you get on average?</label>
+            <input type="number" name="sleep_hours" min="0" max="24" step="0.5" required />
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 2 -->
+      <div class="form-step" data-step="2">
+        <div class="form-grid">
+          <div class="full">
+            <label>Do you have any health or medical conditions? If so, please explain.</label>
+            <textarea name="medical_conditions" required></textarea>
+          </div>
+
+          <div class="full">
+            <label>Do you have any medical conditions where exercise may be contraindicated or require clearance from a Medical Doctor? If so, please explain.</label>
+            <textarea name="exercise_clearance"></textarea>
+          </div>
+
+          <div class="full">
+            <label>Please list any medications or supplements you are taking.</label>
+            <textarea name="medications_supplements" required></textarea>
+          </div>
+
+          <div class="full">
+            <label>Do you have a history of musculoskeletal or orthopedic issues (injury/pain)?</label>
+            <textarea name="musculoskeletal_history" required></textarea>
+          </div>
+
+          <div class="full">
+            <label>Do you have any physical limitations due to pain, health concerns, or difficulty that affect your ability to exercise? If so, please explain.</label>
+            <textarea name="physical_limitations" required></textarea>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 3 -->
+      <div class="form-step" data-step="3">
+        <div class="form-grid">
+          <div class="full">
+            <label>Rate your level of confidence/knowledge on the topic of exercise/fitness.</label>
+            <label class="field-label">Rate your level of confidence/knowledge on the topic of exercise/fitness.</label>
+            <div class="range-wrap">
+              <span>No Knowledge or Confidence</span>
+              <input type="range" name="exercise_knowledge" min="1" max="10" value="5" />
+              <span>Completely Proficient</span>
+            </div>
+          </div>
+
+          <div class="full">
+            <label>Rate your level of confidence/knowledge on the topic of nutrition.</label>
+            <label class="field-label">Rate your level of confidence/knowledge on the topic of nutrition.</label>
+            <div class="range-wrap">
+              <span>No Knowledge or Confidence</span>
+              <input type="range" name="nutrition_confidence" min="1" max="10" value="5" />
+              <span>Completely Proficient</span>
+            </div>
+          </div>
+
+          <div class="full">
+            <label>What is your level of understanding when it comes to basic nutrition knowledge?</label>
+            <div class="option-group">
+              <label><input type="radio" name="nutrition_understanding" value="Very high" required /> Very high</label>
+              <label><input type="radio" name="nutrition_understanding" value="High" /> High</label>
+              <label><input type="radio" name="nutrition_understanding" value="Moderate" /> Moderate</label>
+              <label><input type="radio" name="nutrition_understanding" value="Low" /> Low</label>
+              <label><input type="radio" name="nutrition_understanding" value="Very low" /> Very low</label>
+            </div>
+            <label class="field-label">What is your level of understanding when it comes to basic nutrition knowledge?</label>
+            <select name="nutrition_understanding" required>
+              <option value="">Select one</option>
+              <option value="Very high">Very high</option>
+              <option value="High">High</option>
+              <option value="Moderate">Moderate</option>
+              <option value="Low">Low</option>
+              <option value="Very low">Very low</option>
+            </select>
+          </div>
+
+          <div class="full">
+            <label>Have you previously used corrective exercises?</label>
+            <div class="option-group">
+              <label><input type="radio" name="corrective_exercises" value="Regularly and effective" required /> Yes, I regularly use corrective exercises and find them effective</label>
+              <label><input type="radio" name="corrective_exercises" value="Tried and somewhat helpful" /> Yes, I have tried them before and found them somewhat helpful</label>
+              <label><input type="radio" name="corrective_exercises" value="Tried and not effective" /> Yes, but I didn’t find them particularly effective</label>
+              <label><input type="radio" name="corrective_exercises" value="Never tried" /> No, I’ve never tried corrective exercises</label>
+              <label><input type="radio" name="corrective_exercises" value="Interested in trying" /> No, but I am interested in trying them</label>
+            </div>
+            <label class="field-label">Have you previously used corrective exercises?</label>
+            <select name="corrective_exercises" required>
+              <option value="">Select one</option>
+              <option value="Regularly and effective">Yes, regularly and effective</option>
+              <option value="Tried and somewhat helpful">Yes, tried them and somewhat helpful</option>
+              <option value="Tried and not effective">Yes, tried them and not very effective</option>
+              <option value="Never tried">No, never tried them</option>
+              <option value="Interested in trying">No, but interested in trying</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 4 -->
+      <div class="form-step" data-step="4">
+        <div class="form-grid">
+          <div class="full">
+            <label>What types of physical activities or sports do you enjoy?</label>
+            <textarea name="activities_enjoy" required></textarea>
+          </div>
+
+          <div class="full">
+            <label>How often do you currently engage in physical activity, and what types do you do?</label>
+            <textarea name="current_activity" required></textarea>
+          </div>
+
+<div class="full">
+  <label class="field-label">Do you prefer structured plans or flexible guidelines?</label>
+  <select name="planning_style" required>
+    <option value="">Select one</option>
+    <option value="Structured Plans">Structured Plans</option>
+    <option value="Flexible Plans">Flexible Plans</option>
+  </select>
+</div>
+
+<div class="full">
+  <label class="field-label">Are you interested in solo activities, group settings, or a mix of both?</label>
+  <select name="activity_setting" required>
+    <option value="">Select one</option>
+    <option value="Solo activities">Solo activities</option>
+    <option value="Group settings">Group settings</option>
+    <option value="Either individual or group">Either individual or group</option>
+  </select>
+</div>
+
+<div class="full">
+  <label class="field-label">Do you prefer exercising in a public setting or a private setting?</label>
+  <select name="exercise_environment" required>
+    <option value="">Select one</option>
+    <option value="Public">Public gym or fitness classes</option>
+    <option value="Private">Private setting (home or outdoors)</option>
+    <option value="Mix">Mix of public and private</option>
+    <option value="Open">Open to exploring both</option>
+    <option value="Small private groups">Small private groups</option>
+  </select>
+</div>
+
+<div class="full">
+  <label class="field-label">Do you enjoy indoor or outdoor physical activities more?</label>
+  <select name="indoor_outdoor" required>
+    <option value="">Select one</option>
+    <option value="Indoor">Indoor physical activities</option>
+    <option value="Outdoor">Outdoor physical activities</option>
+    <option value="Both">Mix of both</option>
+    <option value="No strong preference">No strong preference</option>
+    <option value="Open to exploring">Open to exploring</option>
+  </select>
+</div>
+        </div>
+      </div>
+
+      <!-- STEP 5 -->
+      <div class="form-step" data-step="5">
+        <div class="form-grid">
+          <div class="full">
+            <label>Do you have any dietary restrictions? If yes, please list them.</label>
+            <label class="field-label">Do you have any dietary restrictions? If yes, please list them.</label>
+            <textarea name="dietary_restrictions" required></textarea>
+          </div>
+
+<div class="full">
+  <label class="field-label">Do you prefer preparing meals at home, eating out, or a mix of both?</label>
+  <select name="meal_preference" required>
+    <option value="">Select one</option>
+    <option value="Home almost all the time">Prepare meals at home almost all the time</option>
+    <option value="Mostly home occasionally out">Mostly prepare meals at home, occasionally eat out</option>
+    <option value="Balanced mix">Balanced mix of home and eating out</option>
+    <option value="Mostly out occasionally home">Mostly eat out, occasionally prepare meals at home</option>
+    <option value="Eat out almost all the time">Eat out almost all the time</option>
+  </select>
+</div>
+          <div class="full">
+            <label class="field-label">Do you prefer preparing meals at home, eating out, or a mix of both?</label>
+            <select name="meal_preference" required>
+              <option value="">Select one</option>
+              <option value="Home almost all the time">Prepare meals at home almost all the time</option>
+              <option value="Mostly home occasionally out">Mostly prepare meals at home, occasionally eat out</option>
+              <option value="Balanced mix">Balanced mix of home and eating out</option>
+              <option value="Mostly out occasionally home">Mostly eat out, occasionally prepare meals at home</option>
+              <option value="Eat out almost all the time">Eat out almost all the time</option>
+            </select>
+          </div>
+
+<div class="full">
+  <label class="field-label">Are you comfortable tracking food and/or physical activity?</label>
+  <select name="tracking_comfort" required>
+    <option value="">Select one</option>
+    <option value="Comfortable both">Comfortable tracking both food and physical activity</option>
+    <option value="Food only">Comfortable tracking food only</option>
+    <option value="Physical activity only">Comfortable tracking physical activity only</option>
+    <option value="Neither">Not comfortable tracking either</option>
+    <option value="Open to it">Haven’t tried tracking but open to it</option>
+    <option value="Prefer not to">Prefer not to track</option>
+  </select>
+</div>
+          <div class="full">
+            <label class="field-label">Are you comfortable tracking food and/or physical activity?</label>
+            <select name="tracking_comfort" required>
+              <option value="">Select one</option>
+              <option value="Comfortable both">Comfortable tracking both food and physical activity</option>
+              <option value="Food only">Comfortable tracking food only</option>
+              <option value="Physical activity only">Comfortable tracking physical activity only</option>
+              <option value="Neither">Not comfortable tracking either</option>
+              <option value="Open to it">Haven’t tried tracking but open to it</option>
+              <option value="Prefer not to">Prefer not to track</option>
+            </select>
+          </div>
+
+<div class="full">
+  <label class="field-label">Have you attempted to gain or lose weight in the past?</label>
+  <select name="weight_attempts" required>
+    <option value="">Select one</option>
+    <option value="Yes">Yes</option>
+    <option value="No">No</option>
+  </select>
+</div>
+          <div class="full">
+            <label class="field-label">Have you attempted to gain or lose weight in the past?</label>
+            <select name="weight_attempts" required>
+              <option value="">Select one</option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+          </div>
+
+<div class="full">
+  <label class="field-label">What is your primary motivation for weight modification?</label>
+  <select name="weight_motivation" required>
+    <option value="">Select one</option>
+    <option value="Overall health">Improve overall health</option>
+    <option value="Appearance">Improve appearance and confidence</option>
+    <option value="Performance">Improve athletic performance</option>
+    <option value="Energy">Increase daily energy</option>
+    <option value="Recovery or prevention">Recover from or prevent injuries</option>
+    <option value="Not interested">Not interested in weight modification</option>
+  </select>
+</div>
+          <div class="full">
+            <label class="field-label">What is your primary motivation for weight modification?</label>
+            <select name="weight_motivation" required>
+              <option value="">Select one</option>
+              <option value="Overall health">Improve overall health</option>
+              <option value="Appearance">Improve appearance and confidence</option>
+              <option value="Performance">Improve athletic performance</option>
+              <option value="Energy">Increase daily energy</option>
+              <option value="Recovery or prevention">Recover from or prevent injuries</option>
+              <option value="Not interested">Not interested in weight modification</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 6 -->
+      <div class="form-step" data-step="6">
+        <div class="form-grid">
+          <div class="full">
+            <label>What barriers make it difficult to maintain a wellness routine?</label>
+            <textarea name="wellness_barriers" required></textarea>
+          </div>
+
+<div class="full">
+  <label class="field-label">How does your current routine affect your stress levels or energy throughout the day?</label>
+  <select name="stress_energy" required>
+    <option value="">Select one</option>
+    <option value="Low stress high energy">Low stress and high energy</option>
+    <option value="Manage stress low energy">Manage stress but low energy</option>
+    <option value="Moderately stressed tired">Moderately stressed and somewhat tired</option>
+    <option value="Very stressful draining">Very stressful and draining</option>
+    <option value="Varies">Varies from day to day</option>
+  </select>
+</div>
+
+          <div class="full">
+            <label>Have you faced any previous obstacles in trying to achieve your health goals? If so, please explain.</label>
+            <textarea name="previous_obstacles" required></textarea>
+          </div>
+
+          <div class="full">
+            <label>What do you want to achieve in your wellness journey?</label>
+            <textarea name="wellness_goals" required></textarea>
+          </div>
+
+          <div class="full">
+            <label>Are there any long-term lifestyle changes you’d like to make?</label>
+            <textarea name="long_term_changes" required></textarea>
+          </div>
+
+          <div class="full">
+            <label>Do you have any short-term milestones in mind?</label>
+            <textarea name="short_term_milestones" required></textarea>
+          </div>
+
+          <div class="full">
+            <label>How will you measure your own success in wellness?</label>
+            <textarea name="success_measure" required></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-actions assessment-step-actions">
+        <button type="button" class="btn btn-light" id="prevStepBtn">Back</button>
+        <button type="button" class="btn btn-dark" id="nextStepBtn">Next</button>
+        <button type="submit" class="btn btn-gold" id="submitStepBtn">Submit Assessment</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+    <section class="section" id="consent">
+      <div class="container narrow consent-section">
+        <div class="section-heading">
+          <p class="section-kicker">Informed Consent for Wellness Coaching</p>
+          <h2>Important information before participation.</h2>
+        </div>
+
+        <div class="consent-copy">
+          <p>By participating in services provided by Ambrosia Wellness, you acknowledge that wellness coaching is an educational and collaborative process designed to support movement, lifestyle habits, and long-term self-sufficiency. Services may include exercise guidance, wellness education, and general lifestyle support. These services are not intended to diagnose, treat, or cure any medical or mental health condition and are not a substitute for care provided by a licensed medical or mental health professional.</p>
+
+          <p>You understand that participation in wellness coaching and movement-based activities involves inherent risks, including physical discomfort, soreness, or injury. You voluntarily choose to participate and agree to take responsibility for your own health and safety.</p>
+
+          <p>You acknowledge that results from wellness coaching cannot be guaranteed. Progress depends on many factors, including consistency, effort, recovery, stress, and individual response.</p>
+
+          <p>You understand that Ambrosia Wellness operates within a wellness and educational scope of practice. If concerns arise that exceed this scope, you may be encouraged to seek care from an appropriate licensed healthcare provider.</p>
+
+          <p>By providing your consent, you acknowledge that you are voluntarily engaging in wellness coaching services and agree to assume responsibility for your participation.</p>
+        </div>
+
+        <div class="signature-grid">
+          <input type="text" placeholder="Name" />
+          <input type="text" placeholder="Date" />
+          <input type="text" placeholder="Signature" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-kicker">Frequently Asked Questions</p>
+          <h2>Common questions about Ambrosia.</h2>
+        </div>
+
+        <div class="faq-grid">
+          <article class="faq-card">
+            <h3>Is Ambrosia personal training?</h3>
+            <p>Ambrosia is broader than personal training. It is a whole-person wellness system that integrates movement, recovery, education, and lifestyle support.</p>
+          </article>
+
+          <article class="faq-card">
+            <h3>Do I need a gym?</h3>
+            <p>No. Plans can be built for private settings, public gyms, outdoor environments, or hybrid routines.</p>
+          </article>
+
+          <article class="faq-card">
+            <h3>Do you work with injuries?</h3>
+            <p>Ambrosia supports injury prevention, corrective exercise, and movement modification within a wellness scope of practice.</p>
+          </article>
+
+          <article class="faq-card">
+            <h3>Is this only for athletes?</h3>
+            <p>No. The system is designed for active duty military, first responders, healthcare professionals, busy adults, and anyone pursuing sustainable wellness.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-copy">
+          <p class="section-kicker section-kicker-light">Contact Us</p>
+          <h2>Start the conversation.</h2>
+          <p>Reach out to learn more about Ambrosia, inquire about plans, or schedule a consultation.</p>
+          <div class="contact-meta">
+            <p><strong>Email:</strong> Help@ambrosiawellness.com</p>
+            <p><strong>Phone:</strong> (555) 555-5555</p>
+          </div>
+        </div>
+
+        <form class="contact-form">
+          <div class="form-grid">
+            <input type="text" placeholder="First name" />
+            <input type="text" placeholder="Last name" />
+            <input type="email" placeholder="Email address" class="full" />
+            <textarea placeholder="How can we help?" class="full"></textarea>
+          </div>
+          <button type="submit" class="btn btn-gold">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="section careers-section" id="careers">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-kicker">Careers</p>
+          <h2>Join the Ambrosia vision.</h2>
+          <p class="section-intro">We are building a wellness brand centered on longevity, resilience, education, and sustainable performance.</p>
+        </div>
+
+        <div class="career-grid">
+          <article class="career-card">
+            <h3>Coaching Roles</h3>
+            <p>Wellness, performance, nutrition, and recovery professionals who believe in sustainable transformation.</p>
+          </article>
+
+          <article class="career-card">
+            <h3>Clinical Expertise</h3>
+            <p>Practitioners and specialists who can help deepen the credibility and impact of the Ambrosia system.</p>
+          </article>
+
+          <article class="career-card">
+            <h3>Brand & Operations</h3>
+            <p>Creative, operational, and strategic talent who want to help build a premium wellness company.</p>
+          </article>
+        </div>
+
+        <div class="career-action">
+          <a href="#contact" class="btn btn-dark">Inquire About Careers</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <button class="floating-cta" onclick="document.getElementById('assessment').scrollIntoView({behavior:'smooth'})">
+    Start Assessment
+  </button>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="footer-brand">
+          <img src="logo.png" alt="Ambrosia logo" class="footer-logo" />
+          <span>Ambrosia Wellness</span>
+        </div>
+        <p class="footer-copy">
+          Wellness built to last. Education-first coaching for sustainable health, performance, and independence.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <div>
+          <p class="footer-heading">Navigate</p>
+          <a href="#plans">Plans</a>
+          <a href="#assessment">Assessment</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <div>
+          <p class="footer-heading">Brand Values</p>
+          <span>Veteran Owned</span>
+          <span>Evidence Based</span>
+          <span>Education First</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+<div class="helper-widget" id="helperWidget">
+  <button class="helper-toggle" id="helperToggle" type="button" aria-expanded="false" aria-controls="helperPanel">
+    Need Help?
+  </button>
+
+  <div class="helper-panel" id="helperPanel">
+  <div class="helper-panel" id="helperPanel" hidden>
+    <div class="helper-header">
+      <h3>Ambrosia Guide</h3>
+      <p>Choose a topic below to get pointed in the right direction.</p>
+    </div>
+
+    <div class="helper-prompts">
+      <button class="helper-prompt" type="button" data-answer="plans">
+        Which plan is right for me?
+      </button>
+
+      <button class="helper-prompt" type="button" data-answer="services">
+        What does Ambrosia actually help with?
+      </button>
+
+      <button class="helper-prompt" type="button" data-answer="assessment">
+        What happens in the assessment?
+      </button>
+
+      <button class="helper-prompt" type="button" data-answer="injury">
+        Do you work with injuries or limitations?
+      </button>
+
+      <button class="helper-prompt" type="button" data-answer="start">
+        I’m not sure where to begin
+      </button>
+    </div>
+
+    <div class="helper-response" id="helperResponse">
+      <p>Select a question to get started.</p>
+    </div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+(function(){
+emailjs.init("BJleFc5WPwLgbHOZ_");
+})();
+</script>
+  <script src="script.js"></script>
+</body>
+</html>
