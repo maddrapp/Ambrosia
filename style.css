@@ -1019,6 +1019,7 @@ a {
   align-items: stretch;
   width: 100%;
   overflow: visible;
+  padding-top: 20px;
 }
 
 .plan-badge-wrap {
@@ -1228,7 +1229,9 @@ a {
   justify-content: center;
   gap: 12px;
 }
-
+.plans-section {
+  overflow: visible;
+}
 .plan-indicator {
   width: 18px;
   height: 18px;
@@ -1340,6 +1343,7 @@ a {
     left: 22px;
   }
 }
+
 
 
 
