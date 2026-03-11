@@ -1024,6 +1024,23 @@ a {
 .plan-badge-wrap {
   position: relative;
   overflow: visible;
+  transition: transform 0.25s ease, opacity 0.25s ease, filter 0.25s ease;
+}
+
+/* move the whole Phoenix unit, badge included */
+.plan-badge-wrap:has(.plan-card.is-side) {
+  transform: translateY(12px);
+}
+
+.plan-badge-wrap:has(.plan-card.is-active) {
+  transform: translateY(-8px);
+  z-index: 2;
+}
+
+/* stop the inner Phoenix card from moving by itself */
+.plan-badge-wrap .plan-card.is-side,
+.plan-badge-wrap .plan-card.is-active {
+  transform: none;
 }
 
 .plan-card {
@@ -1112,7 +1129,6 @@ a {
 }
 
 .plan-card.is-side {
-  transform: translateY(12px);
   opacity: 0.78;
   filter: saturate(0.92);
 }
@@ -1130,7 +1146,6 @@ a {
 }
 
 .plan-card.is-active {
-  transform: translateY(-8px);
   opacity: 1;
   border-color: rgba(215, 161, 52, 0.34);
   background: linear-gradient(180deg, #fffaf1 0%, #ffffff 100%);
@@ -1323,4 +1338,5 @@ a {
     left: 22px;
   }
 }
+
 
