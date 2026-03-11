@@ -1762,8 +1762,8 @@ a {
 .helper-widget {
   position: fixed;
   left: 24px;
-  bottom: 24px;
-  z-index: 1000;
+  bottom: 96px;
+  z-index: 1100;
 }
 
 .helper-toggle {
@@ -1864,6 +1864,7 @@ a {
     width: 100%;
   }
 }
+
 
 
 
