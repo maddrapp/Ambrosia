@@ -1377,3 +1377,106 @@ a {
 html {
   scroll-behavior: smooth;
 }
+
+/* ===== CAROUSEL POLISH FIX ===== */
+
+.plans-section .plans-carousel {
+  align-items: stretch;
+}
+
+.plans-section .plan-card {
+  height: 100%;
+  min-height: 520px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+.plans-section .plan-card p,
+.plans-section .plan-card ul {
+  transition: opacity 0.22s ease;
+}
+
+.plans-section .plan-card.is-side {
+  transform: scale(0.94);
+  opacity: 0.78;
+}
+
+.plans-section .plan-card.is-side p:not(.plan-subtitle):not(.plan-price),
+.plans-section .plan-card.is-side ul {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.plans-section .plan-card.is-side ul {
+  padding-left: 18px;
+  max-height: 88px;
+}
+
+.plans-section .plan-card.is-active {
+  transform: scale(1.03);
+  opacity: 1;
+  border-color: rgba(215, 161, 52, 0.34);
+  background: linear-gradient(180deg, #fffaf1 0%, #ffffff 100%);
+  box-shadow: 0 22px 52px rgba(185, 122, 0, 0.14);
+  z-index: 2;
+}
+
+.plans-section .plan-card.is-active p,
+.plans-section .plan-card.is-active ul {
+  opacity: 1;
+}
+
+.plans-section .active-badge {
+  position: absolute;
+  top: -12px;
+  right: 24px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: #f8ebc7;
+  color: #8b6416;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-weight: 700;
+  box-shadow: 0 10px 22px rgba(185, 122, 0, 0.12);
+}
+
+.plans-section .plan-card .plan-list {
+  margin-top: 18px;
+}
+
+.plans-section .plan-card.is-active .plan-list {
+  margin-top: 18px;
+}
+
+.plans-section .plan-card.is-side .plan-list li:nth-child(n+4) {
+  display: none;
+}
+
+@media (max-width: 1100px) {
+  .plans-section .plan-card {
+    min-height: auto;
+  }
+
+  .plans-section .plan-card.is-side,
+  .plans-section .plan-card.is-active {
+    transform: none;
+    opacity: 1;
+  }
+
+  .plans-section .plan-card.is-side p:not(.plan-subtitle):not(.plan-price),
+  .plans-section .plan-card.is-side ul {
+    display: block;
+    -webkit-line-clamp: unset;
+    overflow: visible;
+    max-height: none;
+  }
+
+  .plans-section .plan-card.is-side .plan-list li:nth-child(n+4) {
+    display: list-item;
+  }
+}
