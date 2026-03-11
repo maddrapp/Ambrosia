@@ -73,26 +73,49 @@ if (carousel && prevBtn && nextBtn && indicators.length) {
     return [prev, index, next];
   }
 
-  function makeSlide(card, isActive) {
-    const slide = document.createElement("div");
-    slide.className = "plan-slide";
+function makeSlide(card, isActive) {
+  const slide = document.createElement("div");
+  slide.className = "plan-slide";
 
-    card.classList.remove("is-side", "is-active");
+  card.classList.remove("is-side", "is-active");
 
-    if (isActive) {
-      card.classList.add("is-active");
-
-      const badge = document.createElement("div");
-      badge.className = "active-badge";
-      badge.textContent = "Active Path";
-      slide.appendChild(badge);
-    } else {
-      card.classList.add("is-side");
-    }
-
-    slide.appendChild(card);
-    return slide;
+  const price = card.querySelector(".plan-price");
+  if (price) {
+    Object.assign(price.style, {
+      position: "absolute",
+      top: "52px",
+      right: "22px",
+      left: "auto",
+      bottom: "auto",
+      margin: "0",
+      padding: "6px 12px",
+      borderRadius: "999px",
+      background: "#3e3733",
+      color: "#fffaf1",
+      fontSize: "0.84rem",
+      fontWeight: "700",
+      lineHeight: "1",
+      whiteSpace: "nowrap",
+      width: "auto",
+      display: "inline-block",
+      zIndex: "10"
+    });
   }
+
+  if (isActive) {
+    card.classList.add("is-active");
+
+    const badge = document.createElement("div");
+    badge.className = "active-badge";
+    badge.textContent = "Active Path";
+    slide.appendChild(badge);
+  } else {
+    card.classList.add("is-side");
+  }
+
+  slide.appendChild(card);
+  return slide;
+}
 
   function renderCarousel(animate = false) {
     const total = originalPlans.length;
@@ -140,5 +163,6 @@ if (carousel && prevBtn && nextBtn && indicators.length) {
 
   renderCarousel(false);
 }
+
 
 
