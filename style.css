@@ -1163,57 +1163,43 @@ a {
   color: #d7c9bb;
 }
 
-/* Card container */
-.card {
+.plan-card {
   position: relative;
-  overflow: visible; /* ensures badge isn't clipped */
 }
 
-/* Deal / Active badge */
 .active-badge {
   position: absolute;
   top: 0;
   left: 28px;
-  right: auto;
   transform: translateY(-50%);
-  z-index: 10;
+  z-index: 5;
 
   display: inline-flex;
   align-items: center;
-  width: max-content;
+  gap: 6px;
+  width: fit-content;
   white-space: nowrap;
 
-  padding: 6px 14px;
+  padding: 5px 12px;
   border-radius: 999px;
-
-  background: #f8f5ef;
-  border: 1.5px solid #d7a134;
+  background: #fffdf9;
+  border: 1px solid rgba(215, 161, 52, 0.9);
 
   color: #8c6513;
-  font-size: 9px;
+  font-size: 8px;
   font-weight: 700;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
 
-  box-shadow: 0 8px 18px rgba(183, 120, 0, 0.12);
+  box-shadow:
+    0 8px 18px rgba(183, 120, 0, 0.12),
+    0 0 0 3px #fffdf9;
 }
 
 .active-badge::before {
   content: "★";
-  margin-right: 6px;
-  font-size: 10px;
+  font-size: 9px;
   line-height: 1;
-}
-  color: #2b1f0d;
-
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  font-weight: 700;
-
-  box-shadow:
-    0 10px 20px rgba(185,122,0,0.25),
-    0 0 0 3px #fffdf9;
 }
 
 .plans-indicators {
@@ -1332,6 +1318,7 @@ a {
     padding: 22px;
   }
 }
+
 
 
 
