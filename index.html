@@ -569,44 +569,48 @@
             <textarea name="current_activity" required></textarea>
           </div>
 
-          <div class="full">
-            <label class="field-label">Do you prefer structured plans or flexible guidelines?</label>
-            <div class="option-group two-col">
-              <label><input type="radio" name="planning_style" value="Structured Plans" required /> Structured Plans</label>
-              <label><input type="radio" name="planning_style" value="Flexible Plans" /> Flexible Plans</label>
-            </div>
-          </div>
+<div class="full">
+  <label class="field-label">Do you prefer structured plans or flexible guidelines?</label>
+  <select name="planning_style" required>
+    <option value="">Select one</option>
+    <option value="Structured Plans">Structured Plans</option>
+    <option value="Flexible Plans">Flexible Plans</option>
+  </select>
+</div>
 
-          <div class="full">
-            <label>Are you interested in solo activities, group settings, or a mix of both?</label>
-            <div class="option-group">
-              <label><input type="radio" name="activity_setting" value="Solo activities" required /> Solo activities</label>
-              <label><input type="radio" name="activity_setting" value="Group settings" /> Group settings</label>
-              <label><input type="radio" name="activity_setting" value="Either individual or group" /> I like to participate in either individual or group activities</label>
-            </div>
-          </div>
+<div class="full">
+  <label class="field-label">Are you interested in solo activities, group settings, or a mix of both?</label>
+  <select name="activity_setting" required>
+    <option value="">Select one</option>
+    <option value="Solo activities">Solo activities</option>
+    <option value="Group settings">Group settings</option>
+    <option value="Either individual or group">Either individual or group</option>
+  </select>
+</div>
 
-          <div class="full">
-            <label>Do you prefer exercising in a public setting or a private setting?</label>
-            <div class="option-group">
-              <label><input type="radio" name="exercise_environment" value="Public" required /> I prefer public settings like gyms or fitness classes.</label>
-              <label><input type="radio" name="exercise_environment" value="Private" /> I prefer private settings, such as working out at home or outdoors alone.</label>
-              <label><input type="radio" name="exercise_environment" value="Mix" /> I enjoy a mix of both public and private settings.</label>
-              <label><input type="radio" name="exercise_environment" value="Open" /> I’m not sure yet; I’m open to exploring both options.</label>
-              <label><input type="radio" name="exercise_environment" value="Small private groups" /> I prefer small, private group workouts over large public gyms.</label>
-            </div>
-          </div>
+<div class="full">
+  <label class="field-label">Do you prefer exercising in a public setting or a private setting?</label>
+  <select name="exercise_environment" required>
+    <option value="">Select one</option>
+    <option value="Public">Public gym or fitness classes</option>
+    <option value="Private">Private setting (home or outdoors)</option>
+    <option value="Mix">Mix of public and private</option>
+    <option value="Open">Open to exploring both</option>
+    <option value="Small private groups">Small private groups</option>
+  </select>
+</div>
 
-          <div class="full">
-            <label>Do you enjoy indoor or outdoor physical activities more?</label>
-            <div class="option-group">
-              <label><input type="radio" name="indoor_outdoor" value="Indoor" required /> I prefer indoor physical activities</label>
-              <label><input type="radio" name="indoor_outdoor" value="Outdoor" /> I prefer outdoor physical activities</label>
-              <label><input type="radio" name="indoor_outdoor" value="Both" /> I enjoy a mix of both equally</label>
-              <label><input type="radio" name="indoor_outdoor" value="No strong preference" /> I don’t have a strong preference</label>
-              <label><input type="radio" name="indoor_outdoor" value="Open to exploring" /> I don’t currently enjoy physical activities in either environment but am open to exploring</label>
-            </div>
-          </div>
+<div class="full">
+  <label class="field-label">Do you enjoy indoor or outdoor physical activities more?</label>
+  <select name="indoor_outdoor" required>
+    <option value="">Select one</option>
+    <option value="Indoor">Indoor physical activities</option>
+    <option value="Outdoor">Outdoor physical activities</option>
+    <option value="Both">Mix of both</option>
+    <option value="No strong preference">No strong preference</option>
+    <option value="Open to exploring">Open to exploring</option>
+  </select>
+</div>
         </div>
       </div>
 
@@ -618,48 +622,53 @@
             <textarea name="dietary_restrictions" required></textarea>
           </div>
 
-          <div class="full">
-            <label>Do you prefer preparing meals at home, eating out, or a mix of both?</label>
-            <div class="option-group">
-              <label><input type="radio" name="meal_preference" value="Home almost all the time" required /> I prefer preparing meals at home almost all the time</label>
-              <label><input type="radio" name="meal_preference" value="Mostly home occasionally out" /> I mostly prepare meals at home but occasionally eat out</label>
-              <label><input type="radio" name="meal_preference" value="Balanced mix" /> I enjoy a balanced mix of preparing meals at home and eating out</label>
-              <label><input type="radio" name="meal_preference" value="Mostly out occasionally home" /> I mostly eat out but occasionally prepare meals at home</label>
-              <label><input type="radio" name="meal_preference" value="Eat out almost all the time" /> I prefer eating out almost all the time</label>
-            </div>
+<div class="full">
+  <label class="field-label">Do you prefer preparing meals at home, eating out, or a mix of both?</label>
+  <select name="meal_preference" required>
+    <option value="">Select one</option>
+    <option value="Home almost all the time">Prepare meals at home almost all the time</option>
+    <option value="Mostly home occasionally out">Mostly prepare meals at home, occasionally eat out</option>
+    <option value="Balanced mix">Balanced mix of home and eating out</option>
+    <option value="Mostly out occasionally home">Mostly eat out, occasionally prepare meals at home</option>
+    <option value="Eat out almost all the time">Eat out almost all the time</option>
+  </select>
+</div>
+
+<div class="full">
+  <label class="field-label">Are you comfortable tracking food and/or physical activity?</label>
+  <select name="tracking_comfort" required>
+    <option value="">Select one</option>
+    <option value="Comfortable both">Comfortable tracking both food and physical activity</option>
+    <option value="Food only">Comfortable tracking food only</option>
+    <option value="Physical activity only">Comfortable tracking physical activity only</option>
+    <option value="Neither">Not comfortable tracking either</option>
+    <option value="Open to it">Haven’t tried tracking but open to it</option>
+    <option value="Prefer not to">Prefer not to track</option>
+  </select>
+</div>
           </div>
 
-          <div class="full">
-            <label>Are you comfortable tracking food and/or physical activity?</label>
-            <div class="option-group">
-              <label><input type="radio" name="tracking_comfort" value="Comfortable both" required /> Yes, I am comfortable tracking both food and physical activity regularly</label>
-              <label><input type="radio" name="tracking_comfort" value="Food only" /> I am comfortable tracking only food</label>
-              <label><input type="radio" name="tracking_comfort" value="Physical activity only" /> I am comfortable tracking only physical activity</label>
-              <label><input type="radio" name="tracking_comfort" value="Neither" /> I am not comfortable tracking either food or physical activity</label>
-              <label><input type="radio" name="tracking_comfort" value="Open to it" /> I haven’t tried tracking but am open to it</label>
-              <label><input type="radio" name="tracking_comfort" value="Prefer not to" /> I haven’t tried tracking and prefer not to</label>
-            </div>
-          </div>
+<div class="full">
+  <label class="field-label">Have you attempted to gain or lose weight in the past?</label>
+  <select name="weight_attempts" required>
+    <option value="">Select one</option>
+    <option value="Yes">Yes</option>
+    <option value="No">No</option>
+  </select>
+</div>
 
-          <div class="full">
-            <label>Have you attempted to gain or lose weight in the past?</label>
-            <div class="option-group two-col">
-              <label><input type="radio" name="weight_attempts" value="Yes" required /> Yes</label>
-              <label><input type="radio" name="weight_attempts" value="No" /> No</label>
-            </div>
-          </div>
-
-          <div class="full">
-            <label>What is your primary motivation for weight modification?</label>
-            <div class="option-group">
-              <label><input type="radio" name="weight_motivation" value="Overall health" required /> To improve my overall health and reduce the risk of chronic diseases</label>
-              <label><input type="radio" name="weight_motivation" value="Appearance" /> To enhance my physical appearance and feel more confident</label>
-              <label><input type="radio" name="weight_motivation" value="Performance" /> To improve athletic performance or physical capabilities</label>
-              <label><input type="radio" name="weight_motivation" value="Energy" /> To increase energy and feel better in my daily life</label>
-              <label><input type="radio" name="weight_motivation" value="Recovery or prevention" /> To recover from or prevent injuries</label>
-              <label><input type="radio" name="weight_motivation" value="Not interested" /> Not interested in weight modification</label>
-            </div>
-          </div>
+<div class="full">
+  <label class="field-label">What is your primary motivation for weight modification?</label>
+  <select name="weight_motivation" required>
+    <option value="">Select one</option>
+    <option value="Overall health">Improve overall health</option>
+    <option value="Appearance">Improve appearance and confidence</option>
+    <option value="Performance">Improve athletic performance</option>
+    <option value="Energy">Increase daily energy</option>
+    <option value="Recovery or prevention">Recover from or prevent injuries</option>
+    <option value="Not interested">Not interested in weight modification</option>
+  </select>
+</div>
         </div>
       </div>
 
@@ -671,16 +680,17 @@
             <textarea name="wellness_barriers" required></textarea>
           </div>
 
-          <div class="full">
-            <label>How does your current routine affect your stress levels or energy throughout the day?</label>
-            <div class="option-group">
-              <label><input type="radio" name="stress_energy" value="Low stress high energy" required /> My routine keeps my stress levels low and energy high throughout the day</label>
-              <label><input type="radio" name="stress_energy" value="Manage stress low energy" /> My routine helps me manage stress but leaves me feeling low on energy</label>
-              <label><input type="radio" name="stress_energy" value="Moderately stressed tired" /> My routine leaves me feeling moderately stressed and somewhat tired</label>
-              <label><input type="radio" name="stress_energy" value="Very stressful draining" /> My routine is very stressful and drains my energy significantly</label>
-              <label><input type="radio" name="stress_energy" value="Varies" /> My routine varies—some days are stressful or tiring, and others are balanced</label>
-            </div>
-          </div>
+<div class="full">
+  <label class="field-label">How does your current routine affect your stress levels or energy throughout the day?</label>
+  <select name="stress_energy" required>
+    <option value="">Select one</option>
+    <option value="Low stress high energy">Low stress and high energy</option>
+    <option value="Manage stress low energy">Manage stress but low energy</option>
+    <option value="Moderately stressed tired">Moderately stressed and somewhat tired</option>
+    <option value="Very stressful draining">Very stressful and draining</option>
+    <option value="Varies">Varies from day to day</option>
+  </select>
+</div>
 
           <div class="full">
             <label>Have you faced any previous obstacles in trying to achieve your health goals? If so, please explain.</label>
@@ -914,6 +924,7 @@ emailjs.init("BJleFc5WPwLgbHOZ_");
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
