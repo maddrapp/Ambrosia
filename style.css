@@ -1068,7 +1068,7 @@ a {
 }
 
 .plan-card.is-side {
-  transform: scale(0.94);
+  transform: translateY(12px);
   opacity: 0.78;
   filter: saturate(0.92);
 }
@@ -1086,7 +1086,7 @@ a {
 }
 
 .plan-card.is-active {
-  transform: scale(1.03);
+  transform: translateY(-8px);
   opacity: 1;
   border-color: rgba(215, 161, 52, 0.34);
   background: linear-gradient(180deg, #fffaf1 0%, #ffffff 100%);
@@ -1318,6 +1318,7 @@ a {
     padding: 22px;
   }
 }
+
 
 
 
