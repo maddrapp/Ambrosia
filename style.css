@@ -1111,9 +1111,10 @@ a {
 
 /* Flame — fire */
 .plan-card[data-plan="Flame"] h3::after {
-  content: "\1F525"; /* 🔥 */
+  content: "X";
+  color: red;
+  font-size: 1.2rem;
 }
-
 /* Phoenix — feather */
 .plan-card[data-plan="Phoenix"] h3::after {
   content: "\1FAB6"; /* 🪶 */
@@ -1466,5 +1467,6 @@ a {
 .plan-slide .plan-card h3 {
   margin: 0 110px 18px 52px !important;
 }
+
 
 
