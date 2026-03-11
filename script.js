@@ -63,30 +63,39 @@ if (carousel && prevBtn && nextBtn && indicators.length) {
     return [prev, index, next];
   }
 
-  function renderCarousel() {
-    const total = originalPlans.length;
-    const [left, center, right] = getVisibleIndexes(activeIndex, total);
+function renderCarousel() {
+  const total = originalPlans.length;
+  const [left, center, right] = getVisibleIndexes(activeIndex, total);
 
-    carousel.innerHTML = "";
+  carousel.innerHTML = "";
 
-    [left, center, right].forEach((planIndex, position) => {
-      const clone = originalPlans[planIndex].cloneNode(true);
+  [left, center, right].forEach((planIndex, position) => {
+    const clone = originalPlans[planIndex].cloneNode(true);
 
-      clone.classList.remove("is-side", "is-active");
+    clone.classList.remove("is-side", "is-active");
 
-      if (position === 1) {
-        clone.classList.add("is-active");
-      } else {
-        clone.classList.add("is-side");
-      }
+    // remove old badge if present
+    const existingBadge = clone.querySelector(".active-badge");
+    if (existingBadge) existingBadge.remove();
 
-      carousel.appendChild(clone);
-    });
+    if (position === 1) {
+      clone.classList.add("is-active");
 
-    indicators.forEach((indicator, index) => {
-      indicator.classList.toggle("active", index === activeIndex);
-    });
-  }
+      const badge = document.createElement("div");
+      badge.className = "active-badge";
+      badge.textContent = "Active Path";
+      clone.prepend(badge);
+    } else {
+      clone.classList.add("is-side");
+    }
+
+    carousel.appendChild(clone);
+  });
+
+  indicators.forEach((indicator, index) => {
+    indicator.classList.toggle("active", index === activeIndex);
+  });
+}
 
   prevBtn.addEventListener("click", () => {
     activeIndex = (activeIndex - 1 + originalPlans.length) % originalPlans.length;
@@ -107,3 +116,4 @@ if (carousel && prevBtn && nextBtn && indicators.length) {
 
   renderCarousel();
 }
+
