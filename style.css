@@ -1892,3 +1892,68 @@ a {
 .consent-box .checkbox-row {
   margin-top: 16px;
 }
+.floating-helper {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 9999;
+}
+
+.helper-button {
+  background: linear-gradient(135deg, #f3d47c, #d7a134, #b77800);
+  border: none;
+  color: #2b1f0d;
+  font-weight: 700;
+  padding: 14px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.helper-panel {
+  position: fixed;
+  bottom: 90px;
+  right: 30px;
+  width: 320px;
+  max-height: 520px;
+  overflow-y: auto;
+  background: white;
+  border-radius: 18px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  display: none;
+}
+
+.helper-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.helper-header h3 {
+  margin: 0;
+}
+
+.helper-close {
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.helper-content details {
+  margin-bottom: 14px;
+}
+
+.helper-content summary {
+  font-weight: 700;
+  cursor: pointer;
+  margin-bottom: 6px;
+}
+
+.helper-content p {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
