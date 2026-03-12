@@ -243,18 +243,19 @@ window.addEventListener("DOMContentLoaded", () => {
   const helperResponse = document.getElementById("helperResponse");
   const helperPrompts = document.querySelectorAll(".helper-prompt");
 
-  if (helperToggle && helperPanel && helperResponse) {
-    helperToggle.addEventListener("click", () => {
-      const isOpen = helperPanel.style.display === "block";
+if (helperToggle && helperPanel && helperResponse) {
+  helperToggle.addEventListener("click", () => {
 
-      if (isOpen) {
-        helperPanel.style.display = "none";
-        helperToggle.setAttribute("aria-expanded", "false");
-      } else {
-        helperPanel.style.display = "block";
-        helperToggle.setAttribute("aria-expanded", "true");
-      }
-    });
+    if (helperPanel.style.display === "block") {
+      helperPanel.style.display = "none";
+      helperToggle.setAttribute("aria-expanded", "false");
+    } else {
+      helperPanel.style.display = "block";
+      helperToggle.setAttribute("aria-expanded", "true");
+    }
+
+  });
+}
 
     const helperAnswers = {
       plans: `
@@ -288,3 +289,4 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
