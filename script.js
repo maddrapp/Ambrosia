@@ -230,55 +230,55 @@ window.addEventListener("DOMContentLoaded", () => {
     renderCarousel(false);
   }
 
-const helperToggle = document.getElementById("helperToggle");
-const helperPanel = document.getElementById("helperPanel");
-const helperResponse = document.getElementById("helperResponse");
-const helperPrompts = document.querySelectorAll(".helper-prompt");
+  const helperToggle = document.getElementById("helperToggle");
+  const helperPanel = document.getElementById("helperPanel");
+  const helperResponse = document.getElementById("helperResponse");
+  const helperPrompts = document.querySelectorAll(".helper-prompt");
 
-if (helperToggle && helperPanel && helperResponse) {
-  helperToggle.addEventListener("click", () => {
-    const isHidden = helperPanel.hasAttribute("hidden");
+  if (helperToggle && helperPanel && helperResponse) {
+    helperToggle.addEventListener("click", () => {
+      const isOpen = helperPanel.style.display === "block";
 
-    if (isHidden) {
-      helperPanel.removeAttribute("hidden");
-      helperToggle.setAttribute("aria-expanded", "true");
-    } else {
-      helperPanel.setAttribute("hidden", "");
-      helperToggle.setAttribute("aria-expanded", "false");
-    }
-  });
-
-  const helperAnswers = {
-    plans: `
-      <p><strong>Choosing a plan:</strong> Ember is best for building a foundation, Flame adds more structure and accountability, Phoenix is for deeper renewal and rebuilding, and Ascendant is the most customized concierge option.</p>
-      <p><a href="#plans">Compare the plans</a></p>
-    `,
-    services: `
-      <p><strong>Ambrosia supports</strong> nutrition, movement, recovery, sleep, education, injury prevention, and sustainable habit building.</p>
-      <p><a href="#services">View services</a></p>
-    `,
-    assessment: `
-      <p><strong>The assessment</strong> helps us understand your goals, routine, limitations, and preferences before building recommendations around you.</p>
-      <p><a href="#assessment">Start the assessment</a></p>
-    `,
-    injury: `
-      <p><strong>Yes</strong> — Ambrosia can support injury prevention, corrective exercise, movement modification, and wellness planning within a wellness scope of practice.</p>
-      <p><a href="#faq">See common questions</a></p>
-    `,
-    start: `
-      <p><strong>The best place to begin</strong> is the assessment. It gives structure to your goals and helps identify which path makes the most sense for you.</p>
-      <p><a href="#assessment">Begin here</a></p>
-    `
-  };
-
-  helperPrompts.forEach((button) => {
-    button.addEventListener("click", () => {
-      const key = button.dataset.answer;
-      helperResponse.innerHTML =
-        helperAnswers[key] || "<p>Select a question to get started.</p>";
+      if (isOpen) {
+        helperPanel.style.display = "none";
+        helperToggle.setAttribute("aria-expanded", "false");
+      } else {
+        helperPanel.style.display = "block";
+        helperToggle.setAttribute("aria-expanded", "true");
+      }
     });
-  });
-}
-});
+
+    const helperAnswers = {
+      plans: `
+        <p><strong>Choosing a plan:</strong> Ember is best for building a foundation, Flame adds more structure and accountability, Phoenix is for deeper renewal and rebuilding, and Ascendant is the most customized concierge option.</p>
+        <p><a href="#plans">Compare the plans</a></p>
+      `,
+      services: `
+        <p><strong>Ambrosia supports</strong> nutrition, movement, recovery, sleep, education, injury prevention, and sustainable habit building.</p>
+        <p><a href="#services">View services</a></p>
+      `,
+      assessment: `
+        <p><strong>The assessment</strong> helps us understand your goals, routine, limitations, and preferences before building recommendations around you.</p>
+        <p><a href="#assessment">Start the assessment</a></p>
+      `,
+      injury: `
+        <p><strong>Yes</strong> — Ambrosia can support injury prevention, corrective exercise, movement modification, and wellness planning within a wellness scope of practice.</p>
+        <p><a href="#faq">See common questions</a></p>
+      `,
+      start: `
+        <p><strong>The best place to begin</strong> is the assessment. It gives structure to your goals and helps identify which path makes the most sense for you.</p>
+        <p><a href="#assessment">Begin here</a></p>
+      `
+    };
+
+    helperPrompts.forEach((button) => {
+      button.addEventListener("click", () => {
+        const key = button.dataset.answer;
+        helperResponse.innerHTML =
+          helperAnswers[key] || "<p>Select a question to get started.</p>";
+      });
+    });
+  }
+
 
 
