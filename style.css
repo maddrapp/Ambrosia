@@ -2044,6 +2044,9 @@ a {
 .consent-box .checkbox-row {
   margin-top: 16px;
 }
+.helper-panel {
+  display: none;
+}
 
 
 
