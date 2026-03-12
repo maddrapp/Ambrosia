@@ -905,56 +905,6 @@
     </div>
   </footer>
 
-<div class="helper-widget">
-<button
-  type="button"
-  class="helper-toggle"
-  id="helperToggle"
-  aria-expanded="false"
-  onclick="
-    const panel = document.getElementById('helperPanel');
-    const isOpen = panel.style.display === 'block';
-    panel.style.display = isOpen ? 'none' : 'block';
-    this.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
-  "
->
-  Need Help?
-</button>
-
-  <div class="helper-panel" id="helperPanel" style="display: none;">
-    <div class="helper-header">
-      <h3>Ambrosia Guide</h3>
-      <p>Choose a topic below to get pointed in the right direction.</p>
-    </div>
-
-    <div class="helper-prompts">
-      <button class="helper-prompt" type="button" data-answer="plans">
-        Which plan is right for me?
-      </button>
-
-      <button class="helper-prompt" type="button" data-answer="services">
-        What does Ambrosia actually help with?
-      </button>
-
-      <button class="helper-prompt" type="button" data-answer="assessment">
-        What happens in the assessment?
-      </button>
-
-      <button class="helper-prompt" type="button" data-answer="injury">
-        Do you work with injuries or limitations?
-      </button>
-
-      <button class="helper-prompt" type="button" data-answer="start">
-        I’m not sure where to begin
-      </button>
-    </div>
-
-    <div class="helper-response" id="helperResponse">
-      <p>Select a question to get started.</p>
-    </div>
-  </div>
-</div>
-
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script>
     (function () {
@@ -964,6 +914,7 @@
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
