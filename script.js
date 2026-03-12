@@ -238,3 +238,18 @@ window.addEventListener("DOMContentLoaded", () => {
     renderCarousel(false);
   }
 });
+const helperOpen = document.getElementById("helperOpen");
+const helperClose = document.getElementById("helperClose");
+const helperPanel = document.getElementById("helperPanel");
+
+if (helperOpen && helperClose && helperPanel) {
+
+  helperOpen.addEventListener("click", () => {
+    helperPanel.style.display = "block";
+  });
+
+  helperClose.addEventListener("click", () => {
+    helperPanel.style.display = "none";
+  });
+
+}
