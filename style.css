@@ -1808,23 +1808,15 @@ a {
 }
 
 .helper-panel {
-  position: absolute;
-  bottom: 64px;
-  left: 0;
-  width: 320px;
-
-  background: rgba(255, 253, 249, 0.96);
-  border-radius: 18px;
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  background: white;
   padding: 20px;
-
-  box-shadow: 0 28px 70px rgba(28, 25, 23, 0.18);
-  backdrop-filter: blur(12px);
-
-  opacity: 0;
-  transform: translateY(12px);
-  pointer-events: none;
-
-  transition: all 0.25s ease;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0,0,0,.2);
+  width: 300px;
+  z-index: 9999;
 }
 .helper-panel.open {
   opacity: 1;
@@ -2047,6 +2039,7 @@ a {
 .helper-panel {
   display: none;
 }
+
 
 
 
