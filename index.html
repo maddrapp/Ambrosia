@@ -906,14 +906,20 @@
   </footer>
 
 <div class="helper-widget">
-  <button
-    type="button"
-    class="helper-toggle"
-    id="helperToggle"
-    aria-expanded="false"
-  >
-    Need Help?
-  </button>
+<button
+  type="button"
+  class="helper-toggle"
+  id="helperToggle"
+  aria-expanded="false"
+  onclick="
+    const panel = document.getElementById('helperPanel');
+    const isOpen = panel.style.display === 'block';
+    panel.style.display = isOpen ? 'none' : 'block';
+    this.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+  "
+>
+  Need Help?
+</button>
 
   <div class="helper-panel" id="helperPanel" style="display: none;">
     <div class="helper-header">
@@ -958,6 +964,7 @@
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
