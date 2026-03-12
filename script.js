@@ -55,7 +55,6 @@ window.addEventListener("DOMContentLoaded", () => {
       const currentFields = steps[currentStep].querySelectorAll("input, textarea, select");
 
       for (const field of currentFields) {
-        if (field.type === "radio") continue;
         if (!field.checkValidity()) {
           field.reportValidity();
           return false;
@@ -68,10 +67,14 @@ window.addEventListener("DOMContentLoaded", () => {
     if (assessmentNextBtn) {
       assessmentNextBtn.addEventListener("click", () => {
         if (!validateCurrentStep()) return;
+
         if (currentStep < steps.length - 1) {
           currentStep += 1;
           updateStepUI();
-          multiStepAssessmentForm.scrollIntoView({ behavior: "smooth", block: "start" });
+          multiStepAssessmentForm.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
         }
       });
     }
@@ -81,7 +84,10 @@ window.addEventListener("DOMContentLoaded", () => {
         if (currentStep > 0) {
           currentStep -= 1;
           updateStepUI();
-          multiStepAssessmentForm.scrollIntoView({ behavior: "smooth", block: "start" });
+          multiStepAssessmentForm.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
         }
       });
     }
@@ -96,7 +102,9 @@ window.addEventListener("DOMContentLoaded", () => {
 
       emailjs.sendForm("service_ar23zti", "template_060s7tx", this).then(
         function () {
-          alert("Assessment submitted successfully!");
+          alert(
+            "Thank you for completing your Ambrosia Wellness assessment. Your responses have been recorded and will help us better understand your goals, lifestyle, and wellness priorities. We’ll review your information and follow up with next steps soon."
+          );
           multiStepAssessmentForm.reset();
           currentStep = 0;
           updateStepUI();
@@ -279,6 +287,4 @@ window.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
-
-
-
+});
