@@ -2036,9 +2036,65 @@ a {
 .consent-box .checkbox-row {
   margin-top: 16px;
 }
-.helper-panel {
+.helper-accordion {
+  margin-top: 30px;
+  display: grid;
+  gap: 16px;
+}
+
+.helper-item {
+  border: 1px solid rgba(215, 161, 52, 0.16);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.helper-item summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 22px 24px;
+  font-weight: 700;
+  color: var(--text);
+  position: relative;
+  line-height: 1.45;
+}
+
+.helper-item summary::-webkit-details-marker {
   display: none;
 }
+
+.helper-item summary::after {
+  content: "+";
+  position: absolute;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.25rem;
+  color: var(--gold-dark);
+}
+
+.helper-item[open] summary::after {
+  content: "−";
+}
+
+.helper-answer {
+  padding: 0 24px 24px;
+}
+
+.helper-answer p {
+  margin: 0 0 14px;
+  color: var(--text-soft);
+  line-height: 1.72;
+}
+
+.helper-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
+}
+
 
 
 
