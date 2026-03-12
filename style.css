@@ -1894,20 +1894,28 @@ a {
 }
 .floating-helper {
   position: fixed;
-  bottom: 26px;
-  right: 26px;
+  bottom: 30px;
+  left: 30px;
   z-index: 9999;
 }
 
 .helper-button {
-  background: linear-gradient(135deg, #f3d47c, #d7a134, #b77800);
-  border: none;
-  color: #2b1f0d;
+  background: white;
+  border: 2px solid #d7a134;
+  color: #b77800;
   font-weight: 700;
-  padding: 14px 18px;
+  font-size: 0.9rem;
+  padding: 10px 14px;
   border-radius: 999px;
   cursor: pointer;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+
+  box-shadow: 0 10px 25px rgba(0,0,0,.15);
+  transition: all 0.2s ease;
+}
+
+.helper-button:hover {
+  background: #fff7e6;
+  transform: translateY(-2px);
 }
 
 .helper-panel {
@@ -1957,3 +1965,4 @@ a {
   line-height: 1.6;
   margin-bottom: 10px;
 }
+
